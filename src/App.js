@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './containers/Farmacias.css'
 import * as data from './db.json';
+import Farmacias from './containers/Farmacias';
 
 class App extends Component {
   state = {
@@ -209,20 +210,3 @@ class App extends Component {
 }
 
 export default App;
-
-// {
-//   "fecha":"22-04-2019",
-//   "local_id":"1",
-//   "local_nombre":"CRUZ VERDE ",
-//   "comuna_nombre":"QUILLOTA",
-//   "fk_localidad":"32","localidad_nombre":"QUILLOTA",
-//   "local_direccion":"OHIGGINS 195, LOCAL 1",
-//   "funcionamiento_hora_apertura":"09:00 hrs.",
-//   "funcionamiento_hora_cierre":"08:59 hrs.",
-//   "local_telefono":"+56332269467",
-//   "local_lat":"-32.8793428949969",
-//   "local_lng":"-71.2467871500868",
-//   "funcionamiento_dia":"Lunes",
-//   "fk_region":"6",
-//   "fk_comuna":"69"
-// }

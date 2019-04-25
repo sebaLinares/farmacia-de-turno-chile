@@ -1,16 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const farmacias = (props) => {
-  const style = {
-    height: '800px',
-    width: '800px',
+class Farmacias extends Component {
+  render() {
+    return (
+      <div></div>
+    )
   }
-
-  return (
-    <div style={style}>
-      <p onClick={props.farmacias}>Farmacias working!</p>
-    </div>
-  )
 }
 
-export default farmacias;
+export default Farmacias;
