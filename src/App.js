@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Farmacias from './containers/Farmacias'
-import axios from 'axios';
+import './containers/Farmacias.css'
 import * as data from './db.json';
 
 class App extends Component {
@@ -150,15 +149,16 @@ class App extends Component {
       })
 
       // Lista de farmacias segun comuna elegida
-      let farmaciasList = this.farmaciasDeTurno.filter(farmacia=> farmacia.comuna_nombre === this.state.comunaSelected)
-      farmacias = farmaciasList.map(farmacia => {
+      let farmaciasList = this.farmaciasDeTurno.filter((farmacia)=> farmacia.comuna_nombre === this.state.comunaSelected)
+      farmacias = farmaciasList.map((farmacia, index) => {
         return (
-          <div className="card">
+          <div className="card text-center mt-4 mr-4" style={{width: '45%'}} key={index}>
             <div className="card-body">
               <h5 className="card-title">{farmacia.localidad_nombre}</h5>
+              <h5 className="card-title"><strong>{farmacia.local_nombre}</strong></h5>
               <p className="card-text">{farmacia.local_direccion}</p>
-              <p class="card-text"><small class="text-muted">Copia esto: {farmacia.local_lat}, {farmacia.local_lng}</small></p>
-              <p class="card-text"><small class="text-muted">Pégalo en la búsqueda de <a href="https://www.google.cl/maps">Google Maps</a> para encontrar tu farmacia.</small></p>
+              <p className="card-text"><small className="text-muted">Copia esto: <strong>{farmacia.local_lat}, {farmacia.local_lng}</strong></small></p>
+              <p className="card-text"><small className="text-muted">Pégalo en la búsqueda de <a href="https://www.google.cl/maps">Google Maps</a> para encontrar tu farmacia.</small></p>
             </div>
           </div>
         )
@@ -177,24 +177,29 @@ class App extends Component {
           </div>
           <div className="row mt-4">
             <div className="col-xl-12">
-              <div className="form-group">
-                <h2>Elige tu región</h2>
-                <select className="form-control" onChange={this.selectRegionHandler}>
-                  <option value="">Elige una región</option>
-                  {options}
-                </select>
-                <hr/>
-                <h2>Elige tu comuna</h2>
-                <select className="form-control" onChange={this.selectComunaHandler}>
-                  <option value="">Elige una comuna</option>
-                  {comunas}
-                </select>
-              </div>
+              <form className="form-container">
+                <div className="form-group">
+                  <span className="select-title">Elige tu región</span>
+                  <select className="form-control" onChange={this.selectRegionHandler}>
+                    <option value="">Elige una región</option>
+                    {options}
+                  </select>
+                </div>
+                <div className="form-group">
+                  <span className="select-title">Elige tu comuna</span>
+                  <select className="form-control" onChange={this.selectComunaHandler}>
+                    <option value="">Elige una comuna</option>
+                    {comunas}
+                  </select>
+                </div>
+              </form>
             </div>
           </div>
           <div className="row">
             <div className="col-xl-12">
+              <div className="d-flex flex-container flex-wrap justify-content-around">
               {farmacias}
+              </div>
             </div>
           </div>
         </div>
