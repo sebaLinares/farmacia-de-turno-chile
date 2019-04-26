@@ -1,0 +1,13 @@
+.Estado {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: block;
+  width: 250px;
+}
+
+.box > p {
+  display: inline-block;
+}

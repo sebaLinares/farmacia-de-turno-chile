@@ -1,0 +1,61 @@
+@import "../theme.scss";
+
+.farmacia-card .card-body .footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.farmacia-card {
+  position: relative;
+  margin: 10px;
+  width: 300px;
+  background-color: hsl(0, 0%, 99%);
+  border: $borderStyle;
+  border-radius: 10px;
+}
+
+.farmacia-card .nombre-comuna {
+  text-align: left;
+  background-color: $farmaciaHeaderBackground;
+  border-bottom: $borderStyle;
+  overflow: hidden;
+}
+
+.farmacia-card .nombre-comuna h3 {
+  font-size: 24px;
+  margin: 8px;
+}
+
+.farmacia-card .card-body {
+  background-color: #fff;
+  position: relative;
+  text-align: left;
+}
+
+.farmacia-card .card-body h4 {
+  font-size: 24px;
+  font-weight: 600px;
+}
+
+.farmacia-card .card-body h5 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.farmacia-card .footer {
+  border-top: $borderStyle;
+  background-color: $cardHeader;
+}
+
+.farmacia-card .footer p {
+  align-self: center;
+  font-size: 14px;
+  text-align: center;
+}
+
+.farmacia-card .footer span {
+  align-self: center;
+  padding: 0 8px;
+  font-size: 14px;
+  color: hsl(0, 50, 0);
+}
