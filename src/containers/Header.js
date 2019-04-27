@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Header.scss';
+import styles from './Header.module.scss';
 import * as data from './../Database/db.json';
 import * as regiones from './../Database/regiones.json'
 
@@ -122,20 +122,22 @@ class Header extends Component {
     }
 
     return (
-      <div className="Header">
-        <h1>Descubre la farmacia de turno en tu comuna</h1>
-        <form className="form-container">
-          <div className="select-container">
-            <span className="select-title">Elige tu región</span>
-            <select onChange={this.selectRegionHandler}>
-              <option value="">Elige una región</option>
+      <div className={styles.Header}>
+        <div className={styles.titleContainer}>
+          <h1>Descubre la farmacia de turno en tu comuna</h1>
+        </div>
+        <form className={styles.formContainer}>
+          <div className={styles.selectContainer}>
+            <span className={styles.selectTitle}>Elige tu región</span>
+            <select className={styles.selectTag} onChange={this.selectRegionHandler}>
+              <option value="">¿Qué región quieres ver?</option>
               {options}
             </select>
           </div>
-          <div className="select-container">
-            <span className="select-title">Elige tu comuna</span>
-            <select onChange={this.selectComunaHandler}>
-              <option value="">Elige una comuna</option>
+          <div className={styles.selectContainer}>
+            <span className={styles.selectTitle}>Elige tu comuna</span>
+            <select className={styles.selectTag} onChange={this.selectComunaHandler}>
+              <option value="">¿Qué comuna?</option>
               {comunas}
             </select>
           </div>

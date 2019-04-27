@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Farmacia from '../views/Farmacia';
-import styles from './Farmacias.scss';
+import styles from './Farmacias.module.scss';
 
 // Import datos de /database
 import * as data from './../Database/db.json';
@@ -18,6 +18,7 @@ class Farmacias extends Component {
     farmacias = farmaciasList.map((farmacia, index) => {
       return (
         <Farmacia
+          style={styles.farmaciaContainer}
           key={index}
           localidad_nombre={farmacia.localidad_nombre}
           local_nombre={farmacia.local_nombre}
@@ -28,7 +29,7 @@ class Farmacias extends Component {
     })
 
     return (
-        <div className={styles.Farmacia}>
+        <div className={styles.farmaciaContainer}>
           {farmacias}
         </div>
     )
