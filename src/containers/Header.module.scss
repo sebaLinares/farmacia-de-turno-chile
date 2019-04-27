@@ -1,0 +1,55 @@
+@import "./../theme.scss";
+
+.Header {
+  display: flex;
+  flex-direction: column;
+  background-color: $cardHeader;
+  overflow: hidden;
+
+  .titleContainer {
+    border-bottom: $borderStyle;
+
+    h1 {
+      font-weight: 400;
+      font-family: "Source Sans Pro";
+      margin: 8px;
+    }
+  }
+
+  form {
+    background-color: #fff;
+    padding: 16px 24px;
+
+    .selectContainer {
+      padding: 16px 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        margin-right: 16px;
+      }
+
+      .selectTag {
+        height: 24px;
+        cursor: pointer;
+        background-color: #fff;
+        font-family: "Consolas";
+        font-size: 14px;
+        color: hsl(0, 0%, 50%);
+        width: 250px;
+
+        &:hover {
+          background-color: transparent;
+          padding: 15px 5px 15px 25px;
+        }
+
+        option {
+          background-color: #fff;
+          color: hsl(0, 0%, 40%);
+          height: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

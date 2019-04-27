@@ -1,0 +1,17 @@
+.Estado {
+  padding: 50px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 14px;
+  justify-content: space-between;
+
+  span {
+    font-weight: 600;
+  }
+}

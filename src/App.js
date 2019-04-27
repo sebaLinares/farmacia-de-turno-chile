@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './App.scss';
-import './containers/Farmacias.scss'
+import styles from './App.module.scss';
 import Farmacias from './containers/Farmacias';
 import Header from './containers/Header';
 import Estado from './containers/Estado';
@@ -18,11 +17,11 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
-        <div className="Estado">
+      <div className={styles.App}>
+        <div className={styles.estadoContainer}>
           <Estado />
         </div>
-        <div className="Farmacias">
+        <div className={styles.farmaciasContainer}>
           <Header comunaHandler={this.headerHandler}/>
           <Farmacias comunaSelected={this.state.comunaSelected}/>
         </div>
