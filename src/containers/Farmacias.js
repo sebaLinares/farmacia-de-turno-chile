@@ -6,7 +6,6 @@ import styles from './Farmacias.module.scss';
 import * as data from './../Database/db.json';
 
 class Farmacias extends Component {
-
   // Todas las farmacias desde db.json.
   farmaciasDeTurno = data.default;
 
@@ -14,7 +13,9 @@ class Farmacias extends Component {
     let farmacias = [];
 
     // Lista de farmacias segun comuna elegida
-    let farmaciasList = this.farmaciasDeTurno.filter((farmacia)=> farmacia.comuna_nombre === this.props.comunaSelected)
+    let farmaciasList = this.farmaciasDeTurno.filter(
+      farmacia => farmacia.comuna_nombre === this.props.comunaSelected,
+    );
     farmacias = farmaciasList.map((farmacia, index) => {
       return (
         <Farmacia
@@ -24,15 +25,12 @@ class Farmacias extends Component {
           local_nombre={farmacia.local_nombre}
           local_direccion={farmacia.local_direccion}
           local_lat={farmacia.local_lat}
-          local_lng={farmacia.local_lng}/>
-      )
-    })
+          local_lng={farmacia.local_lng}
+        />
+      );
+    });
 
-    return (
-        <div className={styles.farmaciaContainer}>
-          {farmacias}
-        </div>
-    )
+    return <div className={styles.farmaciaContainer}>{farmacias}</div>;
   }
 }
 
