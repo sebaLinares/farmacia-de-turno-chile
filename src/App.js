@@ -1,32 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.scss';
 import Farmacias from './containers/Farmacias';
 import Header from './containers/Header';
 import Estado from './containers/Estado';
+import GoogleSignIn from './containers/GoogleSignIn';
 
-class App extends Component {
-  state = {
-    comunaSelected: '',
+const App = () => {
+  const [comunaSelected, setComunaSelected] = useState('');
+  const headerHandler = (dataFromHeader) => {
+    setComunaSelected(dataFromHeader);
   };
-
-  headerHandler = dataFromHeader => {
-    this.setState({
-      comunaSelected: dataFromHeader,
-    });
-  };
-  render() {
-    return (
-      <div className={styles.App}>
-        <div className={styles.estadoContainer}>
-          <Estado />
-        </div>
-        <div className={styles.farmaciasContainer}>
-          <Header comunaHandler={this.headerHandler} />
-          <Farmacias comunaSelected={this.state.comunaSelected} />
-        </div>
+  return (
+    <div className={styles.App}>
+      <GoogleSignIn />
+      <div className={styles.estadoContainer}>
+        <Estado />
       </div>
-    );
-  }
-}
+      <div className={styles.farmaciasContainer}>
+        <Header comunaHandler={headerHandler} />
+        <Farmacias comunaSelected={comunaSelected} />
+      </div>
+    </div>
+  );
+};
 
 export default App;
