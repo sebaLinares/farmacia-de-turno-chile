@@ -10,9 +10,21 @@ const App = () => {
   const headerHandler = (dataFromHeader) => {
     setComunaSelected(dataFromHeader);
   };
+
+  const signOut = () => {
+    window.gapi.auth2
+      .init({
+        client_id: '73756367210-pps5o33esgvgk5e7c13sf8m8v9e92dvp.apps.googleusercontent.com',
+      })
+      .then(res => res.signOut())
+      .catch(err => console.error(err));
+  };
   return (
     <div className={styles.App}>
       <GoogleSignIn />
+      <button type="button" onClick={signOut}>
+        Sign out
+      </button>
       <div className={styles.estadoContainer}>
         <Estado />
       </div>

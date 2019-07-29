@@ -79,19 +79,6 @@ const Header = ({ comunaHandler = '' }) => {
           </option>
         ));
 
-        // const comunasList = [];
-        // const newList = farmaciasComunas.map((farmacia) => {
-        //   // crear list de comunas para evitar duplicados
-        //   if (comunasList.includes(farmacia.comuna_nombre)) {
-        //   } else {
-        //     comunasList.push(farmacia.comuna_nombre);
-        //     return (
-        //       <option key={farmacia.local_nombre} value={farmacia.comuna_nombre}>
-        //         {farmacia.comuna_nombre}
-        //       </option>
-        //     );
-        //   }
-        // });
         setComunas(comunasList);
       }
     }
