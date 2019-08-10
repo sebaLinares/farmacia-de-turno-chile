@@ -1,6 +1,7 @@
 @import "theme.scss";
 
 .App {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   padding: 50px 20px;
