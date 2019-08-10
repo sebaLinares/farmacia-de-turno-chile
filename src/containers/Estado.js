@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Estado.module.scss';
+import GoogleSignOut from '../views/GoogleSignOut';
 
 const Estado = () => {
   const [estado, setEstado] = useState({
@@ -21,6 +22,10 @@ const Estado = () => {
       <div className={styles.box}>
         <p>Repositorio </p>
         <a href="https://github.com/sebaLinares/farmacia-de-turno-chile-react">Github</a>
+      </div>
+      <div className={styles.box}>
+        <p>Cierra tu sesión </p>
+        <GoogleSignOut />
       </div>
     </div>
   );
