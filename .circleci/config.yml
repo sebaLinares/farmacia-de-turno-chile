@@ -18,11 +18,11 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
+          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
       - run: 'npm install'
       - save_cache:
-        key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
-        paths: 'node_modules'
+          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
+          paths: 'node_modules'
       - run: 'npx semantic-release@15'
 
 workflows:
