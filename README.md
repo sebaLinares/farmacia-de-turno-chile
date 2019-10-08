@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77ad9108-250a-4ab8-a818-e5b06f2ffbc8/deploy-status)](https://app.netlify.com/sites/farmaciadeturnochile/deploys)
+
 # Farmacia de turno Chile
 
 Entra [acá](https://farmaciadeturnochile.netlify.com/) y encuentra la farmacia de turno la locación que eligas. No tiene porque ser donde vives, puede ser de cualquier lugar del país.
