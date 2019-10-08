@@ -1,0 +1,96 @@
+.Sidenav {
+  width: 0;
+}
+.SidenavWrapper {
+  width: 0px;
+  background: var(--sidenav-menu);
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+
+  .saludo {
+    margin-top: 32px;
+  }
+
+  p {
+    font-weight: 600;
+  }
+
+  .profile-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--black);
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+
+  .rrss {
+    margin-top: 32px;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+
+    div {
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+    }
+
+    .github {
+      background: var(--github);
+      background-size: contain;
+    }
+
+    .linkedin {
+      background: var(--linkedin);
+      background-size: contain;
+    }
+
+    .twitter {
+      background: var(--twitter);
+      background-size: contain;
+    }
+  }
+
+  .actualizaciones {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+
+    &p:nth-child(2) {
+      font-weight: 400;
+    }
+  }
+
+  .logout {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+
+    p {
+      margin-right: 40px;
+      font-weight: 600;
+    }
+
+    .logout-btn {
+      width: 20px;
+      height: 20px;
+      background: var(--logout);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
