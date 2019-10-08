@@ -6,11 +6,11 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
+          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
       - run: 'npm install'
       - save_cache:
-        key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
-        paths: 'node_modules'
+          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
+          paths: 'node_modules'
       - run: 'npm run test'
   release:
     docker:
@@ -22,8 +22,8 @@ jobs:
       - run: 'npm install'
       - save_cache:
           key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "package-lock.json"}}
-          paths: 'node_modules'
-      - run: 'npx semantic-release@15'
+          paths:
+            - 'node_modules'
 
 workflows:
   version: 2
