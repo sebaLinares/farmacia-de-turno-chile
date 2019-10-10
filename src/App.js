@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-// import styles from './App.module.scss';
-import Farmacias from './containers/Farmacias';
-import Header from './containers/Header';
-import Estado from './containers/Estado';
-import GoogleAuth from './containers/GoogleAuth';
-import theme from './theme/theme';
+import { mainBackgroundImage, mainBackgroundColour } from './theme/theme';
 
 class App extends Component {
   constructor() {

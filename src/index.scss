@@ -1,17 +1,76 @@
-@import "theme.scss";
+@import 'theme.scss';
+@import 'node_modules/normalize-scss/sass/normalize/import-now';
 
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
+:root {
+  /* Colors */
+  --menu-btn: hsla(191, 80%, 35%, 1);
+  --main-bg: hsla(0, 0%, 100%, 1);
+  --sidenav-menu: hsla(0, 0%, 94%, 1);
+  --bg: url('/assets/bg-light-transparent.png');
+  --bg-retina: url('/assets/bg-light-transparentt@2x.png');
+  --font-color: hsla(191, 80%, 35%, 1);
+  --search-box-bg: #fff;
+  --farmacia-pill-bg: #fff;
+  --farmacia-box-bg: #fff;
+  --google-maps-box-bg: hsla(181, 56%, 66%);
+  --twitter: url('/assets/twitter-light.png');
+  --linkedin: url('/assets/linkedin-light.png');
+  --github: url('/assets/github-light.png');
+  --logout: url('/assets/signout-light.png');
+  --gray: hsla(0, 0%, 94%);
+  --cyan: hsla(181, 56%, 66%);
+  --black: hsla(216, 45%, 11%, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
   padding: 0;
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
 body {
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-  height: 100%;
-  width: 100%;
-  background-color: $mainBackgroundColor;
-  margin: 0;
-  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    'Helvetica Neue', sans-serif;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background: var(--main-bg);
 }
