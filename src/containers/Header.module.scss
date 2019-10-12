@@ -3,16 +3,16 @@
 .Header {
   display: flex;
   flex-direction: column;
-  background-color: $cardHeader;
+  background-color: var(--menu-btn);
   overflow: hidden;
 
   .titleContainer {
-    border-bottom: $borderStyle;
+    border-bottom: 1px solid gray;
 
     h1 {
       font-weight: 400;
       font-family: "Source Sans Pro";
-      border-bottom: $borderStyle;
+      border-bottom: 1px solid gray;
       margin: 8px;
     }
   }
