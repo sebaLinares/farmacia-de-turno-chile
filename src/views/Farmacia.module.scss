@@ -11,13 +11,13 @@
   max-width: 300px;
   margin: 10px;
   background-color: hsl(0, 0%, 99%);
-  border: $borderStyle;
+  border: 1px solid gray;
   border-radius: 10px;
 
   .nombreComuna {
     text-align: left;
-    background-color: $farmaciaHeaderBackground;
-    border-bottom: $borderStyle;
+    background-color: var(--sidenav-menu);
+    border-bottom: 1px solid gray;
     overflow: hidden;
 
     h3 {
@@ -44,8 +44,8 @@
   }
 
   .footer {
-    border-top: $borderStyle;
-    background-color: $farmaciaHeaderBackground;
+    border-top: 1px solid gray;
+    background-color: var(--main-bg);
     overflow: hidden;
 
     p {
