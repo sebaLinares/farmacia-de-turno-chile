@@ -1,6 +1,6 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { it } from 'jest';
 import App from './App';
 
 it('renders without crashing', () => {

@@ -6,12 +6,15 @@ const App = () => {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    // padding: 50px 20px;
     width: auto;
     box-sizing: border-box;
     justify-content: space-between;
   `;
-  return <AppDiv />;
+  return (
+    <AppDiv>
+      <h1>Farmacias Chile</h1>
+    </AppDiv>
+  );
 };
 
 export default App;
