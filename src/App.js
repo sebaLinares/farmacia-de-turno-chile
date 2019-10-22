@@ -28,7 +28,7 @@ const App = () => {
 
     const farmaciasDeApi = await farmaciaGateway.getFarmaciasUrgencia();
     setFarmacias(farmaciasDeApi);
-    console.log(farmaciasDeApi);
+    console.log(farmacias);
   };
 
   return (

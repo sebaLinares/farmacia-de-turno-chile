@@ -1,4 +1,4 @@
-export const regiones = [
+const regiones = [
   { nombre: 'ARICA Y PARINACOTA', fk_region: 1 },
   { nombre: 'REGION DE TARAPACA', fk_region: 2 },
   { nombre: 'REGION DE ANTOFAGASTA', fk_region: 3 },
@@ -22,3 +22,5 @@ export const regiones = [
   { nombre: 'REGION DE MAGALLANES Y LA ANTARTICA CHILENA', fk_region: 15 },
   { nombre: 'REGION DE ÑUBLE', fk_region: 16 },
 ];
+
+export default regiones;
