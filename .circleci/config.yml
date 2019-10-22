@@ -6,11 +6,15 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
+          keys:
+            - farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
+            - farmacia-de-turno-react-{{ .Branch }}-
+            - farmacia-de-turno-react-
       - run: 'yarn install'
       - save_cache:
+          paths:
+            - ~/.cache/yarn
           key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
-          paths: 'node_modules'
       - run: 'yarn test'
   release:
     docker:
