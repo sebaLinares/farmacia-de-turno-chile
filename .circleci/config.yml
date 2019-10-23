@@ -30,7 +30,9 @@ jobs:
             - 'node_modules'
   deploy:
     name: Deploy netlify
-    command: curl -X POST -d {} ${B_NET_URL}
+    steps:
+      - run:
+          command: curl -X POST -d {} ${B_NET_URL}
 
 workflows:
   version: 2
