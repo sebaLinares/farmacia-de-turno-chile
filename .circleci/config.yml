@@ -29,6 +29,8 @@ jobs:
           paths:
             - 'node_modules'
   deploy:
+    machine:
+      - macos
     name: Deploy netlify
     steps:
       - run:
