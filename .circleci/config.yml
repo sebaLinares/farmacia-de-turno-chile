@@ -30,8 +30,8 @@ jobs:
             - 'node_modules'
   deploy:
     machine:
-      - macos
-    name: Deploy netlify
+      macos:
+        xcode: '9.0'
     steps:
       - run:
           command: curl -X POST -d {} ${B_NET_URL}
