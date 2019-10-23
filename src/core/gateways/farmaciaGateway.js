@@ -14,4 +14,15 @@ export default class {
       return error;
     }
   }
+
+  async getFarmaciasTurno() {
+    try {
+      const farmacias = await this.api.getFarmaciasTurno();
+      const formatedFarmacias = this.adapter.farmaciasToView(farmacias);
+
+      return formatedFarmacias;
+    } catch (error) {
+      return error;
+    }
+  }
 }

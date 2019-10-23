@@ -1,17 +1,28 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { mainBackgroundImage } from './theme/theme';
+import { mainBackgroundColor } from './theme/theme';
 import FarmaciaGateway from './core/gateways/farmaciaGateway';
 import FarmaciaAdapter from './core/adapters/farmaciaAdapter';
 import ApiFarmacia from './core/frameworks/ApiFarmacia';
+import Sidenav from './containers/Sidenav';
+
+// Components
+import MenuIcon from './components/MenuIcon';
+
+// fake
+import user from './fakeData/User';
+import lastUpdate from './fakeData/LastUpdate';
+
+const AppDiv = styled.div`
+  position: relative;
+  height: 100vh;
+  background: ${mainBackgroundColor};
+`;
 
 const App = () => {
   const [mode, setMode] = useState('light');
   const [farmacias, setFarmacias] = useState('');
-  const AppDiv = styled.div`
-    height: 100vh;
-    background: ${mainBackgroundImage};
-  `;
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const changeTheme = () => {
     if (mode === 'light') {
@@ -31,14 +42,21 @@ const App = () => {
     console.log(farmacias);
   };
 
+  const toggleMenu = () => {
+    if (menuIsOpen) {
+      setMenuIsOpen(false);
+    } else {
+      setMenuIsOpen(true);
+    }
+  };
+
+  const { username } = user;
+
   return (
     <ThemeProvider theme={{ mode }}>
       <AppDiv>
-        <div className="menu-icon">
-          <div className="bar-1" />
-          <div className="bar-2" />
-          <div className="bar-3" />
-        </div>
+        <Sidenav {...toggleMenu} isOpen={menuIsOpen} username={username} lastUpdate={lastUpdate} />
+        <MenuIcon toggleMenu={toggleMenu} isOpen={menuIsOpen} />
         <h1>Farmacias Shile</h1>
         <button type="button" onClick={changeTheme}>
           change theme
