@@ -16,18 +16,6 @@ jobs:
             - ~/.cache/yarn
           key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
       - run: 'yarn test'
-  release:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - checkout
-      - restore_cache:
-          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
-      - run: 'yarn install'
-      - save_cache:
-          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
-          paths:
-            - 'node_modules'
   deploy:
     machine:
       macos:
@@ -42,7 +30,7 @@ workflows:
     # Run the test jobs first, then the release only when all the test jobs are successful, finally deploy
     jobs:
       - test_node_lts
-      - release:
-          requires:
-            - test_node_lts
-      - deploy
+      - deploy:
+          filters:
+            branches:
+              only: master
