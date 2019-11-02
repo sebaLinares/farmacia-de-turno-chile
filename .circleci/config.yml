@@ -29,7 +29,7 @@ workflows:
   test_and_release_deploy:
     # Run the test jobs first, then the release only when all the test jobs are successful, finally deploy
     jobs:
-      - test_node_lts
+      - test_node_lts:
           filters:
             branches:
               only: dev
