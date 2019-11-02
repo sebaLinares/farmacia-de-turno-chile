@@ -11,25 +11,28 @@ import logoutLight from '../assets/signout-light.png';
 import logoutDark from '../assets/signout-dark.png';
 
 export const mainBackgroundColor = theme('mode', {
-  light:
-    'linear-gradient(45deg, hsla(0, 0%, 94%, 1) 13%, rgba(0, 0, 0, 0) 13%), linear-gradient(45deg, #fff 86%, hsla(0, 0%,94%, 1) 86%)',
-  dark:
-    'linear-gradient(45deg, hsla(180, 63%, 28%, 1) 13%, rgba(0, 0, 0, 0) 13%), linear-gradient(45deg, hsla(191, 66%, 21%, 1) 86%, hsla(180, 63%, 28%, 1) 86%);',
+  light: 'hsla(255, 100%, 100%, 1)',
+  dark: 'hsla(193, 44%, 23%, 1)',
 });
 
 export const changeThemeButtonBackgroundColor = theme('mode', {
-  light: 'hsla(180, 63%, 28%, 1)',
-  dark: 'hsla(191, 66%, 21%, 1)',
+  light: 'hsla(193, 44%, 23%, 1)',
+  dark: 'hsla(0, 0%, 94%)',
 });
 
 export const menuBtnColor = theme('mode', {
-  light: 'hsla(191, 80%, 35%, 1)',
+  light: 'hsla(193, 44%, 23%, 1)',
   dark: 'hsla(0, 0%, 94%)',
 });
 
 export const sidenavMenuBackground = theme('mode', {
   light: 'hsla(0, 0%, 90%, 1)',
   dark: 'hsla(216, 45%, 11%, 1)',
+});
+
+export const invertSidenavMenuBackground = theme('mode', {
+  light: 'hsla(216, 45%, 11%, 1)',
+  dark: 'hsla(0, 0%, 90%, 1)',
 });
 
 export const githubImg = theme('mode', {
@@ -58,6 +61,21 @@ export const cardBackgroundColor = theme('mode', {
 });
 
 export const fontColor = theme('mode', {
-  light: 'hsla(216, 45%, 11%, 1)',
-  dark: '#fff',
+  light: 'hsla(193, 44%, 23%, 1)',
+  dark: 'hsla(0, 0%, 94%)',
+});
+
+export const invertColors = theme('mode', {
+  light: 'hsla(0, 0%, 94%, 1)',
+  dark: 'hsla(193, 44%, 23%, 1)',
+});
+
+export const mainCardShadow = theme('mode', {
+  light: 'hsla(216, 45%, 11%, .3)',
+  dark: 'hsla(255, 100%, 100%, .1)',
+});
+
+export const optionHover = theme('mode', {
+  light: 'red',
+  dark: 'blue',
 });

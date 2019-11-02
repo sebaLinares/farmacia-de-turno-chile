@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { invertSidenavMenuBackground } from '../theme/theme';
 
 // Images
 import profilePic from '../assets/foto-perfil-linkedin.png';
@@ -10,7 +11,7 @@ const StyledProfilePicture = styled.div`
   background: url(${profilePic});
   background-size: cover;
   background-repeat: no-repeat;
-  border: 2px solid hsla(0, 0%, 75%, 1);
+  border: 4px solid ${invertSidenavMenuBackground};
 `;
 
 export default StyledProfilePicture;
