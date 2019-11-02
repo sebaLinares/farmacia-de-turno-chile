@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const StyledLogoDiv = styled.div`
   width: 12%;
-  margin: 0 auto;
+  margin: 1.25rem;
   float: left;
   padding: 1rem;
   & img {
