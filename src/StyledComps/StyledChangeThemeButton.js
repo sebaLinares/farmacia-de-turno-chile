@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { changeThemeButtonBackgroundColor } from '../theme/theme';
+import { changeThemeButtonBackgroundColor, invertColors } from '../theme/theme';
 
 const StyledChangeThemeButton = styled.div`
   width: 80px;
@@ -20,7 +20,7 @@ const StyledChangeThemeButton = styled.div`
     align-items: center;
     width: 2rem;
     height: 2rem;
-    background: #fff;
+    background: ${invertColors};
     border-radius: 50%;
     transition: 0.7s ease;
   }
