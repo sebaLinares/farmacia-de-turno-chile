@@ -30,9 +30,9 @@ workflows:
     # Run the test jobs first, then the release only when all the test jobs are successful, finally deploy
     jobs:
       - test_node_lts
-        filters:
-          branches:
-            only: dev
+          filters:
+            branches:
+              only: dev
       - deploy:
           filters:
             branches:
