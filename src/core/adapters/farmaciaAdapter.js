@@ -3,7 +3,7 @@ import Farmacia from '../entities/farmacia';
 
 export default class {
   farmaciasToView(farmacias) {
-    function farmaciasSegunRegion(numeroRegion) {
+    const farmaciasSegunRegion = (numeroRegion) => {
       if (numeroRegion === '1') {
         return 'Region de Arica y Parinatoca';
       }
@@ -53,16 +53,24 @@ export default class {
         return 'Región de Ñuble';
       }
       return null;
-    }
+    };
+
+    const addFarmaciaPrefix = (farmacia) => {
+      const lowerCaseName = farmacia.local_nombre.toLowerCase();
+      if (lowerCaseName.includes('farmacia') || lowerCaseName.includes('farmacias')) {
+        return farmacia.local_nombre;
+      }
+      return `F. ${farmacia.local_nombre}`;
+    };
 
     const formatedFarmacias = farmacias.map(
       farmacia => new Farmacia({
         idFarmacia: farmacia.local_id,
-        nombreFarmacia: farmacia.local_nombre,
+        name: addFarmaciaPrefix(farmacia),
         comuna: farmacia.comuna_nombre,
         idComuna: farmacia.fk_comuna,
         localidad: farmacia.localidad_nombre,
-        direccion: farmacia.local_direccion,
+        address: farmacia.local_direccion,
         region: farmaciasSegunRegion(farmacia.fk_region),
         idRegion: farmacia.fk_region,
       }),
