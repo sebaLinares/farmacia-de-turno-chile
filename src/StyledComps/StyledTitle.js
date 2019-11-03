@@ -1,8 +1,11 @@
 import styled from 'styled-components';
-import { fontColor } from '../theme/theme';
+import { blackWhite } from '../theme/theme';
 
 const StyledTitle = styled.h2`
-  color: ${fontColor};
+  color: ${blackWhite};
+  font-family: 'Space Mono';
+  font-weight: 600;
+  letter-spacing: 2px;
 `;
 
 export default StyledTitle;

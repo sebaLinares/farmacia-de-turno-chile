@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Farmacias = () => {
-  const [farmacias, setFarmacias] = useState([]);
+// Components
+import FarmaciasBoxes from '../components/FarmaciasBoxes';
+
+// Styled components
+import StyledMainCard from '../StyledComps/StyledMainCard';
+
+const Farmacias = ({ farmacias, history }) => {
+  const verFarmacia = (farmaciaElegida) => {
+    history.push('farmacia', { farmaciaElegida });
+  };
+
   return (
-    <div>
-      <h1>Farmacias</h1>
-    </div>
+    <StyledMainCard>
+      <FarmaciasBoxes verFarmacia={verFarmacia} farmacias={farmacias} />
+    </StyledMainCard>
   );
+};
+
+Farmacias.propTypes = {
+  farmacias: PropTypes.instanceOf(Array),
+  history: PropTypes.instanceOf(Object).isRequired,
+};
+
+Farmacias.defaultProps = {
+  farmacias: [],
 };
 
 export default Farmacias;

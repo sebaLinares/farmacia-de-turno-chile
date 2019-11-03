@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { changeThemeButtonBackgroundColor, invertColors } from '../theme/theme';
+import { whiteBlack, blackWhite } from '../theme/theme';
 
 const StyledChangeThemeButton = styled.div`
   width: 80px;
   height: 40px;
-  background: ${changeThemeButtonBackgroundColor};
+  background: ${blackWhite};
   position: absolute;
   left: 2rem;
   top: 2rem;
@@ -20,12 +20,12 @@ const StyledChangeThemeButton = styled.div`
     align-items: center;
     width: 2rem;
     height: 2rem;
-    background: ${invertColors};
+    background: ${whiteBlack};
     border-radius: 50%;
     transition: 0.7s ease;
   }
   &.dark {
-    background: ${changeThemeButtonBackgroundColor};
+    background: ${blackWhite};
     transition: 0.7s ease;
     &:before {
       content: '🌙';

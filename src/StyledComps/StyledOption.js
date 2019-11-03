@@ -1,25 +1,18 @@
 import styled from 'styled-components';
-import {
-  invertSidenavMenuBackground,
-  fontColor,
-  mainBackgroundColor,
-  optionHover,
-  invertColors,
-} from '../theme/theme';
+import { blackWhite, whiteBlack, redCyan } from '../theme/theme';
 
 const StyledOption = styled.div`
   height: 100%;
-  background-color: ${mainBackgroundColor};
-  font-family: 'Open Sans';
+  background-color: ${whiteBlack};
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
-  color: ${fontColor};
-  border-bottom: 4px solid ${invertSidenavMenuBackground};
+  color: ${blackWhite};
+  border-bottom: 4px solid ${blackWhite};
   cursor: pointer;
   &:hover {
-    background-color: ${optionHover};
-    color: ${invertColors};
+    background-color: ${redCyan};
+    color: ${whiteBlack};
   }
 `;
 

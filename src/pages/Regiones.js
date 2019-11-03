@@ -12,6 +12,7 @@ import StyledSelect from '../StyledComps/StyledSelect';
 import StyledOption from '../StyledComps/StyledOption';
 import StyledSelectContainer from '../StyledComps/StyledSelectContainer';
 import StyledOptionContainer from '../StyledComps/StyledOptionContainer';
+import StyledArrowLeft from '../StyledComps/StyledArrowLeft';
 
 const Regiones = ({ history, filterComunasByRegion }) => {
   const [regiones, setRegiones] = useState([]);
@@ -35,6 +36,7 @@ const Regiones = ({ history, filterComunasByRegion }) => {
 
   return (
     <StyledMainCard>
+      <StyledArrowLeft />
       <StyledText>Elige una</StyledText>
       <StyledTitle>Región</StyledTitle>
       <br />

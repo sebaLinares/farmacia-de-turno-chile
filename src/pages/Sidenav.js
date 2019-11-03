@@ -12,15 +12,15 @@ import StyledSocialMediaBox from '../StyledComps/StyledSocialMediaBox';
 import StyledLastUpdateWrapper from '../StyledComps/StyledLastUpdateWrapper';
 import StyledLastUpdateContent from '../StyledComps/StyledLastUpdateContent';
 import StyledLastUpdateTitle from '../StyledComps/StyledLastUpdateTitle';
-import StyledLogoutWrapper from '../StyledComps/StyledLogoutWrapper';
-import StyledLogoutContent from '../StyledComps/StyledLogoutContent';
-import StyledLogoutIcon from '../StyledComps/StyledLogoutIcon';
+// import StyledLogoutWrapper from '../StyledComps/StyledLogoutWrapper';
+// import StyledLogoutContent from '../StyledComps/StyledLogoutContent';
+// import StyledLogoutIcon from '../StyledComps/StyledLogoutIcon';
 import StyledProfilePicture from '../StyledComps/StyledProfilePicture';
 
 const Sidenav = ({
-  isOpen, username, lastUpdate, changeTheme, mode,
+  isOpen, lastUpdate, changeTheme, mode,
 }) => {
-  const name = username.split(' ')[0];
+  // const name = username.split(' ')[0];
 
   const twitterUrl = 'https://twitter.com/SLinaresL';
   const githubUrl = 'https://github.com/sebaLinares';
@@ -32,10 +32,7 @@ const Sidenav = ({
         <StyledChangeThemeButton className={mode} onClick={changeTheme} />
         <StyledProfilePicture />
         <StyledSocialMediaContainer>
-          <StyledGreetings>
-            {name}
-, te invito a ver otros proyectos y seguirme en RRSS
-          </StyledGreetings>
+          <StyledGreetings>Te invito a ver otros proyectos y seguirme en RRSS</StyledGreetings>
           <StyledSocialMedia>
             <StyledLink target="_blank" href={githubUrl}>
               <StyledSocialMediaBox />
@@ -52,10 +49,10 @@ const Sidenav = ({
           <StyledLastUpdateTitle>última actualización</StyledLastUpdateTitle>
           <StyledLastUpdateContent>{lastUpdate}</StyledLastUpdateContent>
         </StyledLastUpdateWrapper>
-        <StyledLogoutWrapper>
+        {/* <StyledLogoutWrapper>
           <StyledLogoutContent>Logout</StyledLogoutContent>
           <StyledLogoutIcon />
-        </StyledLogoutWrapper>
+        </StyledLogoutWrapper> */}
       </StyledSidenavInfo>
     </StyledSidenavContainer>
   );
@@ -63,7 +60,6 @@ const Sidenav = ({
 
 Sidenav.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  username: PropTypes.string.isRequired,
   lastUpdate: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
   mode: PropTypes.string.isRequired,

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { fontColor } from '../theme/theme';
+import { blackWhite } from '../theme/theme';
 
 const StyledText = styled.p`
   font-size: 1rem;
-  color: ${fontColor};
+  color: ${blackWhite};
 `;
 
 export default StyledText;
