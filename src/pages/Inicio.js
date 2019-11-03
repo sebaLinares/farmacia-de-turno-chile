@@ -31,7 +31,7 @@ const Inicio = ({ history }) => {
       <br />
       <br />
       <StyledButton type="button" onClick={goToRegiones}>
-        <p>comenzar</p>
+        <span>Comenzar</span>
       </StyledButton>
     </StyledMainCard>
   );

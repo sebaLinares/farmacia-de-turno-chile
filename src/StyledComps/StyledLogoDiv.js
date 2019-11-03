@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledLogoDiv = styled.div`
-  width: 12%;
-  margin: 1.25rem;
+  cursor: pointer;
+  width: 5%;
+  margin: 1.75rem;
   float: left;
   padding: 1rem;
   & img {

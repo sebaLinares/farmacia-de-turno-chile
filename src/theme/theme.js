@@ -9,6 +9,8 @@ import githubLight from '../assets/github-light.png';
 import githubDark from '../assets/github-dark.png';
 import logoutLight from '../assets/signout-light.png';
 import logoutDark from '../assets/signout-dark.png';
+import arrowLeftLight from '../assets/arrow-left-light.png';
+import arrowLeftDark from '../assets/arrow-left-dark.png';
 
 export const mainBackgroundColor = theme('mode', {
   light: 'hsla(255, 100%, 100%, 1)',
@@ -78,4 +80,25 @@ export const mainCardShadow = theme('mode', {
 export const optionHover = theme('mode', {
   light: 'red',
   dark: 'blue',
+});
+
+export const whiteBlack = theme('mode', {
+  light: 'hsla(0, 0%, 94%, 1)',
+  dark: 'hsla(216, 45%, 11%, 1)',
+});
+
+export const blackWhite = theme('mode', {
+  light: 'hsla(216, 45%, 11%, 1)',
+  dark: 'hsla(0, 0%, 90%, 1)',
+});
+
+export const redCyan = theme('mode', {
+  light: 'hsla(356, 92%, 54%, 1)',
+  // dark: 'hsla(186, 100%, 46%, 1)',
+  dark: 'hsla(186, 100%, 30%, 1)',
+});
+
+export const arrowLeft = theme('mode', {
+  light: `url(${arrowLeftLight})`,
+  dark: `url(${arrowLeftDark})`,
 });

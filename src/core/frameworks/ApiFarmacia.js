@@ -1,11 +1,12 @@
 export default class {
-  constructor(api) {
-    this.urlApi = api;
+  constructor([urlTurno, urlUrgencia]) {
+    this.urlApiTurno = urlTurno;
+    this.urlApiUrgencia = urlUrgencia;
   }
 
-  getFarmaciasUrgencia() {
+  getFarmaciasTurno() {
     return new Promise((resolve, reject) => {
-      fetch(`https://cors-anywhere.herokuapp.com/${this.urlApi}`)
+      fetch(`https://cors-anywhere.herokuapp.com/${this.urlApiTurno}`)
         .then((res) => {
           console.log(res.status);
           return res.json();
@@ -17,9 +18,9 @@ export default class {
     });
   }
 
-  getFarmaciasTurno() {
+  getFarmaciasUrgencia() {
     return new Promise((resolve, reject) => {
-      fetch(`https://cors-anywhere.herokuapp.com/${this.urlApi}`)
+      fetch(`https://cors-anywhere.herokuapp.com/${this.urlApiUrgencia}`)
         .then(res => res.json())
         .then((data) => {
           resolve(data);

@@ -1,20 +1,20 @@
 export default class {
   constructor({
     idFarmacia,
-    nombreFarmacia, //
+    name, //
     comuna,
     idComuna,
     localidad,
-    direccion,
+    address,
     region,
     idRegion,
   }) {
     this.idFarmacia = idFarmacia;
-    this.nombreFarmacia = nombreFarmacia;
+    this.name = name;
     this.comuna = comuna;
     this.idComuna = idComuna;
     this.localidad = localidad;
-    this.direccion = direccion;
+    this.address = address;
     this.region = region;
     this.idRegion = idRegion;
   }

@@ -1,32 +1,36 @@
 import React, { useState, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import FarmaciaGateway from './core/gateways/farmaciaGateway';
+
+// Core
 import FarmaciaAdapter from './core/adapters/farmaciaAdapter';
-import ApiFarmacia from './core/frameworks/ApiFarmacia';
-import Sidenav from './pages/Sidenav';
+// import FarmaciaGateway from './core/gateways/farmaciaGateway';
+// import ApiFarmacia from './core/frameworks/ApiFarmacia';
 
+// Styled components
 import StyledLogo from './StyledComps/StyledLogo';
+import StyledAppDiv from './StyledComps/StyledAppDiv';
+import StyledLogoDiv from './StyledComps/StyledLogoDiv';
 
+// Pages
 import Routes from './Routes';
+import Sidenav from './pages/Sidenav';
 
 // Components
 import MenuIcon from './components/MenuIcon';
 
 // Others
-import StyledAppDiv from './StyledComps/StyledAppDiv';
-import StyledLogoDiv from './StyledComps/StyledLogoDiv';
-
-// fake
 import user from './fakeData/User';
 import lastUpdate from './fakeData/LastUpdate';
 
-// db
+// // db
 import db from './Database/db';
 
 // utils
 import { getComunasFromRegion, getFarmaciasByComuna } from './utils/functions';
 
-const App = () => {
+const App = ({ history }) => {
   const [mode, setMode] = useState('light');
   const [farmacias, setFarmacias] = useState([]);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -44,35 +48,37 @@ const App = () => {
   useEffect(() => {
     const farmaciaAdapter = new FarmaciaAdapter();
     const farmaciasLimpias = farmaciaAdapter.farmaciasToView(db);
-    console.log(farmaciasLimpias);
     setFarmacias(farmaciasLimpias);
   }, []);
 
-  // UNCOMMENT NI PRODUCTION
-  // // useEffect(() => {
-  // //   let didCancel = false;
-  // //   const getFarmacias = async () => {
-  // //     const apiFarmacia = new ApiFarmacia(process.env.REACT_APP_FARMACIA_URGENCIA_URL);
-  // //     const farmaciaAdapter = new FarmaciaAdapter();
-  // //     const farmaciaGateway = new FarmaciaGateway(apiFarmacia, farmaciaAdapter);
-  // //     try {
-  // //       const farmaciasDeApi = await farmaciaGateway.getFarmaciasUrgencia();
-  // //       if (!didCancel) {
-  // //         setFarmacias(farmaciasDeApi);
-  // //         console.log(farmaciasDeApi);
-  // //       }
-  // //     } catch (err) {
-  // //       if (!didCancel) {
-  // //         console.err(err);
-  // //       }
-  // //     }
-  // //   };
-
-  // //   getFarmacias();
-  // //   return () => {
-  // //     didCancel = true;
-  // //   };
-  // // }, []);
+  // // UNCOMMENT NI PRODUCTION
+  // useEffect(() => {
+  //   let didCancel = false;
+  //   const getFarmacias = async () => {
+  //     const apiFarmacia = new ApiFarmacia([
+  //       process.env.REACT_APP_FARMACIAS_TURNO_URL,
+  //       process.env.REACT_APP_FARMACIAS_URGENCIA_URL,
+  //     ]);
+  //     const farmaciaAdapter = new FarmaciaAdapter();
+  //     const farmaciaGateway = new FarmaciaGateway(apiFarmacia, farmaciaAdapter);
+  //     try {
+  //       const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno();
+  //       const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia();
+  //       if (!didCancel) {
+  //         setFarmacias([...farmaciasTurno, ...farmaciasUrgencia]);
+  //         console.log([...farmaciasTurno, ...farmaciasUrgencia]);
+  //       }
+  //     } catch (err) {
+  //       if (!didCancel) {
+  //         console.error(err);
+  //       }
+  //     }
+  //   };
+  //   getFarmacias();
+  //   return () => {
+  //     didCancel = true;
+  //   };
+  // }, []);
 
   const filterComunasByRegion = (regionId) => {
     const comunasWithId = getComunasFromRegion(regionId, farmacias);
@@ -81,7 +87,7 @@ const App = () => {
 
   const getFarmaciasFromComuna = (comunaId) => {
     const farmaciasFromComuna = getFarmaciasByComuna(comunaId, farmacias);
-    console.log(farmaciasFromComuna);
+    setFarmaciasEnComunaElegida(farmaciasFromComuna);
   };
 
   const toggleMenu = () => {
@@ -90,6 +96,10 @@ const App = () => {
     } else {
       setMenuIsOpen(true);
     }
+  };
+
+  const goInicio = () => {
+    history.push('/');
   };
 
   const { username } = user;
@@ -106,7 +116,7 @@ const App = () => {
           mode={mode}
         />
         <MenuIcon toggleMenu={toggleMenu} isOpen={menuIsOpen} />
-        <StyledLogoDiv>
+        <StyledLogoDiv onClick={goInicio}>
           <StyledLogo />
         </StyledLogoDiv>
         <Routes
@@ -115,16 +125,17 @@ const App = () => {
           getFarmaciasFromComuna={getFarmaciasFromComuna}
           comunas={comunas}
         />
-        {/* <h1>Farmacias Shile</h1>
-          <button type="button" onClick={changeTheme}>
-          change theme
-          </button>
-          <button type="button" onClick={getFarmacias}>
-          GET FARMACIAS
-          </button> */}
       </StyledAppDiv>
     </ThemeProvider>
   );
 };
 
-export default App;
+App.propTypes = {
+  history: PropTypes.instanceOf(Object),
+};
+
+App.defaultProps = {
+  history: {},
+};
+
+export default withRouter(App);
