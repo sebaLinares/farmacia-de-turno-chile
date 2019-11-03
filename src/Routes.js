@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Inicio from './pages/Inicio';
 import Regiones from './pages/Regiones';
 import Comunas from './pages/Comunas';
@@ -12,30 +12,35 @@ const Routes = ({
   comunas,
   getFarmaciasFromComuna,
   farmaciasEnComunaElegida,
+  farmaciaElegida,
 }) => (
-  <Router>
-    <Switch>
-      <Route exact path="/" render={props => <Inicio {...props} />} />
-      <Route
-        exact
-        path="/regiones"
-        render={props => <Regiones {...props} filterComunasByRegion={filterComunasByRegion} />}
-      />
-      <Route
-        exact
-        path="/comunas"
-        render={props => (
-          <Comunas {...props} getFarmaciasFromComuna={getFarmaciasFromComuna} comunas={comunas} />
-        )}
-      />
-      <Route
-        exact
-        path="/farmacias"
-        render={props => <Farmacias {...props} farmacias={farmaciasEnComunaElegida} />}
-      />
-      <Route exact path="/farmacia" render={props => <Farmacia {...props} />} />
-    </Switch>
-  </Router>
+  // <Router>
+  <Switch>
+    <Route exact path="/" render={props => <Inicio {...props} />} />
+    <Route
+      exact
+      path="/regiones"
+      render={props => <Regiones {...props} filterComunasByRegion={filterComunasByRegion} />}
+    />
+    <Route
+      exact
+      path="/comunas"
+      render={props => (
+        <Comunas {...props} getFarmaciasFromComuna={getFarmaciasFromComuna} comunas={comunas} />
+      )}
+    />
+    <Route
+      exact
+      path="/farmacias"
+      render={props => <Farmacias {...props} farmacias={farmaciasEnComunaElegida} />}
+    />
+    <Route
+      exact
+      path="/farmacia"
+      render={props => <Farmacia farmaciaElegida={farmaciaElegida} {...props} />}
+    />
+  </Switch>
+  // </Router>
 );
 
 Routes.propTypes = {
@@ -43,11 +48,13 @@ Routes.propTypes = {
   getFarmaciasFromComuna: PropTypes.func.isRequired,
   comunas: PropTypes.instanceOf(Array),
   farmaciasEnComunaElegida: PropTypes.instanceOf(Array),
+  farmaciaElegida: PropTypes.instanceOf(Object),
 };
 
 Routes.defaultProps = {
   comunas: [],
   farmaciasEnComunaElegida: [],
+  farmaciaElegida: {},
 };
 
 export default Routes;
