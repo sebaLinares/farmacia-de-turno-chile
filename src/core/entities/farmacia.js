@@ -14,7 +14,7 @@ export default class {
     this.comuna = comuna;
     this.idComuna = idComuna;
     this.localidad = localidad;
-    this.direccion = address;
+    this.address = address;
     this.region = region;
     this.idRegion = idRegion;
   }
