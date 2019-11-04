@@ -3,15 +3,16 @@ import { arrowLeft } from '../theme/theme';
 
 const StyledArrowLeft = styled.div`
   position: absolute;
+  contente: '';
   top: 0;
   left: 0;
+  height: 20px;
+  width: 20px;
   margin: 2rem;
-  color: red;
-  background-image: url(${arrowLeft});
+  background-image: ${arrowLeft};
   background-size: cover
   background-repeat: no-repeat;
   background-position: 50%;
-  z-index: 999;
 `;
 
 export default StyledArrowLeft;
