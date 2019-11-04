@@ -13,9 +13,11 @@ Entra [en este link 👈](https://farmaciadeturnochile.netlify.com/) y encuentra
 1️⃣ Haz click en `COMENZAR`
 
 2️⃣ Elije una región
+
 ![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/region.jpg)
 
 3️⃣ Selecciona una comuna
+
 ![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/comuna.jpg)
 
 4️⃣ Se te presentarán tantas farmacias como hayan de turno en la comuna elegida.
