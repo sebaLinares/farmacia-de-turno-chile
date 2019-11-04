@@ -44,11 +44,13 @@ const Regiones = ({ history, filterComunasByRegion }) => {
       <StyledTitle>Región</StyledTitle>
       <br />
       <StyledSelectContainer>
-        <StyledSelect onClick={showOptions} />
+        <StyledSelect onClick={showOptions} role="listbox" />
         <StyledOptionContainer appear={appear}>
           {regiones.map(reg => (
             <StyledOption key={reg.id} onClick={() => regionChosen(reg)}>
-              {reg.name}
+              <li style={{ listStyleType: 'none' }} role="option" aria-selected="true">
+                {reg.name}
+              </li>
             </StyledOption>
           ))}
         </StyledOptionContainer>
