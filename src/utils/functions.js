@@ -93,10 +93,7 @@ export const setFarmaciasTime = () => localStorage.setItem('farmaciasTime', JSON
 
 export const getFarmaciasTimeDifference = () => {
   const currentTime = new Date().getTime();
-  console.log(currentTime);
   const farmaciasSetTime = getFarmaciasTime();
-  console.log(farmaciasSetTime);
-  console.log('TIME BETWEEN ', (currentTime - farmaciasSetTime) / 1000);
   return (currentTime - farmaciasSetTime) / 1000;
 };
 

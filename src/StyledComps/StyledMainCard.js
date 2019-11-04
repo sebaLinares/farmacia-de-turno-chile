@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { cardBackgroundColor, arrowLeft } from '../theme/theme';
+import { cardBackgroundColor } from '../theme/theme';
 
 const StyledMainCard = styled.div`
   position: absolute;

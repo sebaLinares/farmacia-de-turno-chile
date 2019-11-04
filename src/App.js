@@ -25,7 +25,7 @@ import user from './fakeData/User';
 import lastUpdate from './fakeData/LastUpdate';
 
 // db
-import db from './fakeData/db';
+// import db from './fakeData/db';
 
 // utils
 import {
@@ -72,15 +72,15 @@ const App = ({ history }) => {
   //   }
   // }, []);
 
-  const farmaciasTurnoUrl = process.env.REACT_APP_FARMACIAS_TURNO_URL;
-  const farmaciasUrgenciaUrl = process.env.REACT_APP_FARMACIAS_URGENCIA_URL;
-
   const createApiFarmacia = arrayOfUrls => new ApiFarmacia(arrayOfUrls);
   const createFarmaciaAdapter = () => new FarmaciaAdapter();
   const createFarmaciaGateway = (api, adapter) => new FarmaciaGateway(api, adapter);
 
   // UNCOMMENT NI PRODUCTION
   useEffect(() => {
+    const farmaciasTurnoUrl = process.env.REACT_APP_FARMACIAS_TURNO_URL;
+    const farmaciasUrgenciaUrl = process.env.REACT_APP_FARMACIAS_URGENCIA_URL;
+
     let didCancel = false;
     const getFarmacias = async () => {
       const apiFarmacia = createApiFarmacia([farmaciasTurnoUrl, farmaciasUrgenciaUrl]);
