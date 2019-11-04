@@ -3,7 +3,7 @@ import { cardBackgroundColor, blackWhite } from '../theme/theme';
 
 const StyledButton = styled.button`
   position: relative;
-  width: 150px;
+  width: 180px;
   height: 50px;
   border-radius: 4px;
   transition: 0.5s ease;
@@ -18,9 +18,10 @@ const StyledButton = styled.button`
   }
   span {
     width: 100%;
+    margin: 0;
+    padding: 0;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 0.25em 0.75em;
     color: ${blackWhite};
   }
 `;
