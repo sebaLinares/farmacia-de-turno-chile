@@ -5,8 +5,8 @@ import { ThemeProvider } from 'styled-components';
 
 // Core
 import FarmaciaAdapter from './core/adapters/farmaciaAdapter';
-// import FarmaciaGateway from './core/gateways/farmaciaGateway';
-// import ApiFarmacia from './core/frameworks/ApiFarmacia';
+import FarmaciaGateway from './core/gateways/farmaciaGateway';
+import ApiFarmacia from './core/frameworks/ApiFarmacia';
 
 // Styled components
 import StyledLogo from './StyledComps/StyledLogo';
@@ -24,11 +24,19 @@ import MenuIcon from './components/MenuIcon';
 import user from './fakeData/User';
 import lastUpdate from './fakeData/LastUpdate';
 
-// // db
-import db from './Database/db';
+// db
+// import db from './fakeData/db';
 
 // utils
-import { getComunasFromRegion, getFarmaciasByComuna } from './utils/functions';
+import {
+  getComunasFromRegion,
+  getFarmaciasByComuna,
+  localStorageExists,
+  getFarmaciasTimeDifference,
+  saveFarmaciasLocalStorage,
+  getFarmaciasFromLocalStorage,
+  setFarmaciasTime,
+} from './utils/functions';
 
 const App = ({ history }) => {
   const [mode, setMode] = useState('light');
@@ -45,40 +53,80 @@ const App = ({ history }) => {
     }
   };
 
-  useEffect(() => {
-    const farmaciaAdapter = new FarmaciaAdapter();
-    const farmaciasLimpias = farmaciaAdapter.farmaciasToView(db);
-    setFarmacias(farmaciasLimpias);
-  }, []);
-
-  // // UNCOMMENT NI PRODUCTION
+  // // UNCOMMENT IN DEVELOP
   // useEffect(() => {
-  //   let didCancel = false;
-  //   const getFarmacias = async () => {
-  //     const apiFarmacia = new ApiFarmacia([
-  //       process.env.REACT_APP_FARMACIAS_TURNO_URL,
-  //       process.env.REACT_APP_FARMACIAS_URGENCIA_URL,
-  //     ]);
-  //     const farmaciaAdapter = new FarmaciaAdapter();
-  //     const farmaciaGateway = new FarmaciaGateway(apiFarmacia, farmaciaAdapter);
-  //     try {
-  //       const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno();
-  //       const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia();
-  //       if (!didCancel) {
-  //         setFarmacias([...farmaciasTurno, ...farmaciasUrgencia]);
-  //         console.log([...farmaciasTurno, ...farmaciasUrgencia]);
-  //       }
-  //     } catch (err) {
-  //       if (!didCancel) {
-  //         console.error(err);
-  //       }
+  //   const farmaciaAdapter = new FarmaciaAdapter();
+  //   const farmaciasLimpias = farmaciaAdapter.farmaciasToView(db);
+  //   if (localStorageExists('farmacias')) {
+  //     const farmaciasTimeDifference = getFarmaciasTimeDifference();
+  //     if (farmaciasTimeDifference < 5) {
+  //       console.log('to soon to upate');
+  //     } else {
+  //       console.log("let's upate farmacias");
   //     }
-  //   };
-  //   getFarmacias();
-  //   return () => {
-  //     didCancel = true;
-  //   };
+  //     setFarmaciasTime();
+  //     setFarmacias(getFarmaciasFromLocalStorage());
+  //   } else {
+  //     localStorage.setItem('farmaciasTime', JSON.stringify(new Date()));
+  //     saveFarmaciasLocalStorage(farmaciasLimpias);
+  //   }
   // }, []);
+
+  const createApiFarmacia = arrayOfUrls => new ApiFarmacia(arrayOfUrls);
+  const createFarmaciaAdapter = () => new FarmaciaAdapter();
+  const createFarmaciaGateway = (api, adapter) => new FarmaciaGateway(api, adapter);
+
+  // UNCOMMENT NI PRODUCTION
+  useEffect(() => {
+    const farmaciasTurnoUrl = process.env.REACT_APP_FARMACIAS_TURNO_URL;
+    const farmaciasUrgenciaUrl = process.env.REACT_APP_FARMACIAS_URGENCIA_URL;
+
+    let didCancel = false;
+    const getFarmacias = async () => {
+      const apiFarmacia = createApiFarmacia([farmaciasTurnoUrl, farmaciasUrgenciaUrl]);
+      const farmaciaAdapter = createFarmaciaAdapter();
+      const farmaciaGateway = createFarmaciaGateway(apiFarmacia, farmaciaAdapter);
+      if (localStorageExists('farmacias')) {
+        const farmaciasTimeDifference = getFarmaciasTimeDifference();
+        if (farmaciasTimeDifference > 300) {
+          try {
+            const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno();
+            const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia();
+            if (!didCancel) {
+              setFarmaciasTime();
+              saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia]);
+              setFarmacias([...farmaciasTurno, ...farmaciasUrgencia]);
+            }
+          } catch (err) {
+            if (!didCancel) {
+              console.error(err);
+            }
+          }
+        } else {
+          // set farmacias con lo que hay en local storage
+          setFarmacias(getFarmaciasFromLocalStorage());
+        }
+      } else {
+        try {
+          const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno();
+          const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia();
+          if (!didCancel) {
+            setFarmaciasTime();
+            saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia]);
+            setFarmacias([...farmaciasTurno, ...farmaciasUrgencia]);
+          }
+        } catch (err) {
+          if (!didCancel) {
+            console.error(err);
+          }
+        }
+      }
+    };
+    getFarmacias();
+    return () => {
+      didCancel = true;
+    };
+  }, []);
 
   const filterComunasByRegion = (regionId) => {
     const comunasWithId = getComunasFromRegion(regionId, farmacias);

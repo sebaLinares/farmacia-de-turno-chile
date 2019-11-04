@@ -17,6 +17,7 @@ const StyledButton = styled.button`
     transform: translateY(-0.5rem);
   }
   span {
+    width: 100%;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 0.25em 0.75em;

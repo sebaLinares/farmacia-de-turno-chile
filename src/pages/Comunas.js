@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // Styled components
 import StyledMainCard from '../StyledComps/StyledMainCard';
@@ -9,6 +10,7 @@ import StyledSelect from '../StyledComps/StyledSelect';
 import StyledOption from '../StyledComps/StyledOption';
 import StyledSelectContainer from '../StyledComps/StyledSelectContainer';
 import StyledOptionContainer from '../StyledComps/StyledOptionContainer';
+import StyledArrowLeft from '../StyledComps/StyledArrowLeft';
 
 const Comunas = ({
   history, comunas, getFarmaciasFromComuna, farmacias,
@@ -26,6 +28,9 @@ const Comunas = ({
 
   return (
     <StyledMainCard>
+      <Link to="/regiones">
+        <StyledArrowLeft />
+      </Link>
       <StyledText>Elige una</StyledText>
       <StyledTitle>Comuna</StyledTitle>
       <br />

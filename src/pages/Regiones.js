@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // utils
@@ -36,7 +37,9 @@ const Regiones = ({ history, filterComunasByRegion }) => {
 
   return (
     <StyledMainCard>
-      <StyledArrowLeft />
+      <Link to="/">
+        <StyledArrowLeft />
+      </Link>
       <StyledText>Elige una</StyledText>
       <StyledTitle>Región</StyledTitle>
       <br />

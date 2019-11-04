@@ -15,24 +15,51 @@ import StyledLastUpdateTitle from '../StyledComps/StyledLastUpdateTitle';
 // import StyledLogoutWrapper from '../StyledComps/StyledLogoutWrapper';
 // import StyledLogoutContent from '../StyledComps/StyledLogoutContent';
 // import StyledLogoutIcon from '../StyledComps/StyledLogoutIcon';
-import StyledProfilePicture from '../StyledComps/StyledProfilePicture';
+// import StyledProfilePicture from '../StyledComps/StyledProfilePicture';
 
-const Sidenav = ({
-  isOpen, lastUpdate, changeTheme, mode,
-}) => {
+const Sidenav = ({ isOpen, changeTheme, mode }) => {
   // const name = username.split(' ')[0];
 
   const twitterUrl = 'https://twitter.com/SLinaresL';
   const githubUrl = 'https://github.com/sebaLinares';
-  const linkedinUrl = 'https://www.linkedin.com/notifications/';
+  const linkedinUrl = 'https://www.linkedin.com/in/sebastián-linares-linares-2054a622/';
 
   return (
     <StyledSidenavContainer isOpen={isOpen}>
       <StyledSidenavInfo isOpen={isOpen}>
         <StyledChangeThemeButton className={mode} onClick={changeTheme} />
-        <StyledProfilePicture />
+        <StyledGreetings>
+          Este sitio obtiene su información desde
+          <StyledLink target="_blank" href="https://farmanet.minsal.cl/maps/">
+            {' '}
+            este sitio web del MINSAL
+            {' '}
+            <span role="img" aria-label="finger pointing left">
+              👈🏼
+            </span>
+          </StyledLink>
+        </StyledGreetings>
+        <br />
+        <StyledGreetings>
+          Espero te haya sido útil!
+          {' '}
+          <span role="img" aria-label="man with macbook">
+            👨🏽‍💻
+          </span>
+          {' '}
+          Para ver el código de este proyecto
+          {' '}
+          <StyledLink target="_blank" href="https://github.com/sebaLinares/farmacia-de-turno-react">
+            haz click aquí
+            {' '}
+            <span role="img" aria-label="finger pointing left">
+              👈🏼
+            </span>
+          </StyledLink>
+        </StyledGreetings>
+        <br />
+        {/* <StyledProfilePicture /> */}
         <StyledSocialMediaContainer>
-          <StyledGreetings>Te invito a ver otros proyectos y seguirme en RRSS</StyledGreetings>
           <StyledSocialMedia>
             <StyledLink target="_blank" href={githubUrl}>
               <StyledSocialMediaBox />
@@ -47,7 +74,7 @@ const Sidenav = ({
         </StyledSocialMediaContainer>
         <StyledLastUpdateWrapper>
           <StyledLastUpdateTitle>última actualización</StyledLastUpdateTitle>
-          <StyledLastUpdateContent>{lastUpdate}</StyledLastUpdateContent>
+          <StyledLastUpdateContent>3 - 11 - 2019</StyledLastUpdateContent>
         </StyledLastUpdateWrapper>
         {/* <StyledLogoutWrapper>
           <StyledLogoutContent>Logout</StyledLogoutContent>
@@ -60,7 +87,6 @@ const Sidenav = ({
 
 Sidenav.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  lastUpdate: PropTypes.string.isRequired,
   changeTheme: PropTypes.func.isRequired,
   mode: PropTypes.string.isRequired,
 };
