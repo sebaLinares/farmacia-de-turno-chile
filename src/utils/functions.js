@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+import store from 'store';
 
 export const getRegiones = () => [
   {
@@ -85,11 +86,11 @@ export const getFarmaciasByComuna = (idComuna, farmacias) => {
   return farmaciasFromComuna;
 };
 
-export const localStorageExists = name => localStorage.getItem(name);
+export const localStorageExists = name => store.get(name);
 
-export const getFarmaciasTime = () => JSON.parse(localStorage.getItem('farmaciasTime'));
+export const getFarmaciasTime = () => store.get('farmaciasTime');
 
-export const setFarmaciasTime = () => localStorage.setItem('farmaciasTime', JSON.stringify(new Date().getTime()));
+export const setFarmaciasTime = () => store.set('farmaciasTime', new Date().getTime());
 
 export const getFarmaciasTimeDifference = () => {
   const currentTime = new Date().getTime();
@@ -97,9 +98,6 @@ export const getFarmaciasTimeDifference = () => {
   return (currentTime - farmaciasSetTime) / 1000;
 };
 
-export const saveFarmaciasLocalStorage = (farmacias) => {
-  const farmaciasString = JSON.stringify(farmacias);
-  return localStorage.setItem('farmacias', farmaciasString);
-};
+export const saveFarmaciasLocalStorage = farmacias => store.set('farmacias', farmacias);
 
 export const getFarmaciasFromLocalStorage = () => JSON.parse(localStorage.getItem('farmacias'));
