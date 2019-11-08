@@ -32,7 +32,8 @@ workflows:
       - test_node_lts:
           filters:
             branches:
-              only: dev
+              ignore: master
+
       - deploy:
           filters:
             branches:
