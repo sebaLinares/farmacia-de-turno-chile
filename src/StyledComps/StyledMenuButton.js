@@ -7,7 +7,7 @@ const StyledMenuButton = styled.div(
   ({ isOpen }) => css`
   position: absolute;
   z-index: 99;
-  top: 6%;
+  top: 2.5rem;
   right: 5%;
   display: flex;
   flex-direction: column;

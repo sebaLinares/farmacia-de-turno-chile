@@ -7,14 +7,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - farmacia-de-turno{{ .Branch }}-{{ checksum "yarn.lock"}}
-            - farmacia-de-turno{{ .Branch }}-
+            - farmacia-de-turno-{{ .Branch }}-{{ checksum "yarn.lock"}}
+            - farmacia-de-turno-{{ .Branch }}-
             - farmacia-de-turno
       - run: 'yarn install'
       - save_cache:
           paths:
             - ~/.cache/yarn
-          key: farmacia-de-turno{{ .Branch }}-{{ checksum "yarn.lock"}}
+          key: farmacia-de-turno-{{ .Branch }}-{{ checksum "yarn.lock"}}
       - run: 'yarn test'
   deploy:
     machine:

@@ -14,6 +14,7 @@ const SidenavContainer = styled.div(
     transition: width 0.3s ease-in;
     color: ${fontColor};
     border-left: 2px solid ${invertSidenavMenuBackground};
+    height: 100%;
     @media ${device.tablet} {
       width: ${isOpen ? '50%' : '0px'};
       border-left: 4px solid ${invertSidenavMenuBackground};
