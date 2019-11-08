@@ -1,12 +1,12 @@
-[![Netlify Status](https://img.shields.io/netlify/77ad9108-250a-4ab8-a818-e5b06f2ffbc8)](https://app.netlify.com/sites/farmaciadeturnochile/deploys) ![Version](https://img.shields.io/github/v/tag/sebaLinares/farmacia-de-turno-chile-react) [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/sebaLinares/farmacia-de-turno-chile-react/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sebaLinares/farmacia-de-turno-chile-react/pulls) [![Github Stars](https://img.shields.io/github/stars/sebaLinares/farmacia-de-turno-chile-react)](https://github.com/sebaLinares/farmacia-de-turno-react-chile/stargazers)
+[![Netlify Status](https://img.shields.io/netlify/77ad9108-250a-4ab8-a818-e5b06f2ffbc8)](https://app.netlify.com/sites/farmaciadeturnochile/deploys) ![Version](https://img.shields.io/github/v/tag/sebaLinares/farmacia-de-turno-chile) [![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/sebaLinares/farmacia-de-turno-chile/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/sebaLinares/farmacia-de-turno-chile/pulls) [![Github Stars](https://img.shields.io/github/stars/sebaLinares/farmacia-de-turno-chile)](https://github.com/sebaLinares/farmacia-de-turno-react-chile/stargazers)
 
 # 🚀 Farmacia de turno Chile
 
-<!-- ![foto banner](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/init-xl.jpg) -->
+<!-- ![foto banner](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/init-xl.jpg) -->
 
 Entra [en este link 👈](https://farmaciadeturnochile.netlify.com/) y encuentra la farmacia de turno 💊 en cualquier comuna del Chile.
 
-![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/init-sm.jpg)
+![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/init-sm.jpg)
 
 ## 🕹 Uso
 
@@ -14,21 +14,21 @@ Entra [en este link 👈](https://farmaciadeturnochile.netlify.com/) y encuentra
 
 2️⃣ Elije una región
 
-![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/region.jpg)
+![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/region.jpg)
 
 3️⃣ Selecciona una comuna
 
-![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/comuna.jpg)
+![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/comuna.jpg)
 
 4️⃣ Se te presentarán tantas farmacias como hayan de turno en la comuna elegida.
 
 5️⃣Elije una farmacia y entérate de la dirección.
 
-![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/farmacia-card.jpg)
+![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/farmacia-card.jpg)
 
 6️⃣Puedes hacer click en `VER MAPA` y serás redirigid@ google maps en una búsqueda de la dirección de tu farmacia 📍.
 
-![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacias-de-turno-chile-react/farmacia.jpg)
+![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/farmacia.jpg)
 
 ## 🤝 Contribuir
 

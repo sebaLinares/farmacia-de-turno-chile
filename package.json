@@ -1,5 +1,5 @@
 {
-  "name": "farmacia-de-turno-chile-react",
+  "name": "farmacia-de-turno-chile",
   "version": "0.4.2",
   "dependencies": {
     "aws-sdk": "^2.500.0",

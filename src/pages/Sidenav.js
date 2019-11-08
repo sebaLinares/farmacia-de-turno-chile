@@ -73,7 +73,7 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
             {' '}
             <StyledLink
               target="_blank"
-              href="https://github.com/sebaLinares/farmacia-de-turno-react"
+              href="https://github.com/sebaLinares/farmacia-de-turno-chile"
             >
               haz click aquí
               {' '}

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledMainCard from '../StyledComps/StyledMainCard';
 import StyledText from '../StyledComps/StyledText';
+import StyledTitle from '../StyledComps/StyledTitle';
 import StyledButton from '../StyledComps/StyledButton';
 
 const Inicio = ({ history }) => {
@@ -10,7 +11,7 @@ const Inicio = ({ history }) => {
   };
   return (
     <StyledMainCard>
-      <StyledText>Bienvenido al buscador de farmacias de turno</StyledText>
+      <StyledTitle>Bienvenido!</StyledTitle>
       <StyledText>
         Haz click en el botón
         {' '}
@@ -18,10 +19,7 @@ const Inicio = ({ history }) => {
           👇
         </span>
         {' '}
-        y busca la
-      </StyledText>
-      <StyledText>
-        farmacia más cercana a tu
+        y busca la farmacia más cercana a tu
         {' '}
         <span role="img" aria-label="house">
           🏠
