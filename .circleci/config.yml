@@ -7,14 +7,14 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
-            - farmacia-de-turno-react-{{ .Branch }}-
-            - farmacia-de-turno-react-
+            - farmacia-de-turno{{ .Branch }}-{{ checksum "yarn.lock"}}
+            - farmacia-de-turno{{ .Branch }}-
+            - farmacia-de-turno
       - run: 'yarn install'
       - save_cache:
           paths:
             - ~/.cache/yarn
-          key: farmacia-de-turno-react-{{ .Branch }}-{{ checksum "yarn.lock"}}
+          key: farmacia-de-turno{{ .Branch }}-{{ checksum "yarn.lock"}}
       - run: 'yarn test'
   deploy:
     machine:
@@ -22,7 +22,7 @@ jobs:
         xcode: '9.0'
     steps:
       - run:
-          command: curl -X POST -d {} ${B_NET_URL}
+          command: curl -X POST -d {} ${D_FTC}
 
 workflows:
   version: 2
