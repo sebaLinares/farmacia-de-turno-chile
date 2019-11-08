@@ -7,7 +7,7 @@ const StyledChangeThemeButton = styled.div`
   background: ${blackWhite};
   position: absolute;
   left: 2rem;
-  top: 2rem;
+  top: 6%;
   border-radius: 1.5rem;
   transition: 0.7ease;
   &:before {

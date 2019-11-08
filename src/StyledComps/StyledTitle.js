@@ -6,6 +6,7 @@ const StyledTitle = styled.h2`
   font-family: 'Space Mono';
   font-weight: 600;
   letter-spacing: 2px;
+  margin-bottom: 1.5rem;
 `;
 
 export default StyledTitle;
