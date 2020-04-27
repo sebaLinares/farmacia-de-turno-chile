@@ -1,67 +1,67 @@
 /* eslint class-methods-use-this: ["error", { "exceptMethods": ["farmaciasToView"] }] */
-import Farmacia from '../entities/farmacia';
+import Farmacia from '../entities/farmacia'
 
 export default class {
   farmaciasToView(farmacias) {
     const farmaciasSegunRegion = (numeroRegion) => {
       if (numeroRegion === '1') {
-        return 'Region de Arica y Parinatoca';
+        return 'Region de Arica y Parinatoca'
       }
       if (numeroRegion === '2') {
-        return 'Region de Tarapacá';
+        return 'Region de Tarapacá'
       }
       if (numeroRegion === '3') {
-        return 'Region de Antofagasta';
+        return 'Region de Antofagasta'
       }
       if (numeroRegion === '4') {
-        return 'Region de Atacama';
+        return 'Region de Atacama'
       }
       if (numeroRegion === '5') {
-        return 'Region de Coquimbo';
+        return 'Region de Coquimbo'
       }
       if (numeroRegion === '6') {
-        return 'Region de Valparaiso';
+        return 'Region de Valparaiso'
       }
       if (numeroRegion === '7') {
-        return 'Región Metropolitana';
+        return 'Región Metropolitana'
       }
       if (numeroRegion === '8') {
-        return 'Región del Libertador Bernardo Ohiggins';
+        return 'Región del Libertador Bernardo Ohiggins'
       }
       if (numeroRegion === '9') {
-        return 'Región del Maule';
+        return 'Región del Maule'
       }
       if (numeroRegion === '10') {
-        return 'Región del Bío-Bío';
+        return 'Región del Bío-Bío'
       }
       if (numeroRegion === '11') {
-        return 'Región de la Araucanía';
+        return 'Región de la Araucanía'
       }
       if (numeroRegion === '12') {
-        return 'Región de Los Rios';
+        return 'Región de Los Rios'
       }
       if (numeroRegion === '13') {
-        return 'Región de Los Lagos';
+        return 'Región de Los Lagos'
       }
       if (numeroRegion === '14') {
-        return 'Región de Aysen del General Carlos Ibáñez del Capo';
+        return 'Región de Aysen del General Carlos Ibáñez del Capo'
       }
       if (numeroRegion === '15') {
-        return 'Región de Magallanes y la Antártica Chilena';
+        return 'Región de Magallanes y la Antártica Chilena'
       }
       if (numeroRegion === '16') {
-        return 'Región de Ñuble';
+        return 'Región de Ñuble'
       }
-      return null;
-    };
+      return null
+    }
 
     const addFarmaciaPrefix = (farmacia) => {
-      const lowerCaseName = farmacia.local_nombre.toLowerCase();
+      const lowerCaseName = farmacia.local_nombre.toLowerCase()
       if (lowerCaseName.includes('farmacia') || lowerCaseName.includes('farmacias')) {
-        return farmacia.local_nombre;
+        return farmacia.local_nombre
       }
-      return `F. ${farmacia.local_nombre}`;
-    };
+      return `F. ${farmacia.local_nombre}`
+    }
 
     const formatedFarmacias = farmacias.map(
       farmacia => new Farmacia({
@@ -74,8 +74,8 @@ export default class {
         region: farmaciasSegunRegion(farmacia.fk_region),
         idRegion: farmacia.fk_region,
       }),
-    );
+    )
 
-    return formatedFarmacias;
+    return formatedFarmacias
   }
 }

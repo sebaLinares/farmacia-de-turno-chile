@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components';
+import { keyframes } from 'styled-components'
 
 /* eslint-disable import/prefer-default-export */
 export const ShakeKeyFrame = keyframes`
@@ -17,4 +17,4 @@ export const ShakeKeyFrame = keyframes`
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
-`;
+`

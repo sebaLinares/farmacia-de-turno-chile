@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { invertSidenavMenuBackground } from '../theme/theme';
+import styled from 'styled-components'
+import { invertSidenavMenuBackground } from '../theme/theme'
 
 const StyledOptionContainer = styled.div`
   display: ${props => props.appear === false && 'none'};
@@ -10,6 +10,6 @@ const StyledOptionContainer = styled.div`
   z-index: -1;
   max-height: 200px;
   overflow: scroll;
-`;
+`
 
-export default StyledOptionContainer;
+export default StyledOptionContainer

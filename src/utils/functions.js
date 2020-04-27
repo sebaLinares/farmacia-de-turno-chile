@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import store from 'store';
+import store from 'store'
 
 export const getRegiones = () => [
   {
@@ -66,9 +66,9 @@ export const getRegiones = () => [
     name: 'Región de Ñuble',
     id: '16',
   },
-];
+]
 
-const removeDuplicates = (arr, prop) => arr.filter((obj, pos, deepArr) => deepArr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos);
+const removeDuplicates = (arr, prop) => arr.filter((obj, pos, deepArr) => deepArr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos)
 
 export const getComunasFromRegion = (idRegion, farmacias) => {
   const comunasAndId = farmacias
@@ -77,27 +77,27 @@ export const getComunasFromRegion = (idRegion, farmacias) => {
       name: farmacia.comuna,
       id: farmacia.idComuna,
       idFarmacia: farmacia.idFarmacia,
-    }));
-  return removeDuplicates(comunasAndId, 'id');
-};
+    }))
+  return removeDuplicates(comunasAndId, 'id')
+}
 
 export const getFarmaciasByComuna = (idComuna, farmacias) => {
-  const farmaciasFromComuna = farmacias.filter(farmacia => farmacia.idComuna === idComuna);
-  return farmaciasFromComuna;
-};
+  const farmaciasFromComuna = farmacias.filter(farmacia => farmacia.idComuna === idComuna)
+  return farmaciasFromComuna
+}
 
-export const localStorageExists = name => store.get(name);
+export const localStorageExists = name => store.get(name)
 
-export const getFarmaciasTime = () => store.get('farmaciasTime');
+export const getFarmaciasTime = () => store.get('farmaciasTime')
 
-export const setFarmaciasTime = () => store.set('farmaciasTime', new Date().getTime());
+export const setFarmaciasTime = () => store.set('farmaciasTime', new Date().getTime())
 
 export const getFarmaciasTimeDifference = () => {
-  const currentTime = new Date().getTime();
-  const farmaciasSetTime = getFarmaciasTime();
-  return (currentTime - farmaciasSetTime) / 1000;
-};
+  const currentTime = new Date().getTime()
+  const farmaciasSetTime = getFarmaciasTime()
+  return (currentTime - farmaciasSetTime) / 1000
+}
 
-export const saveFarmaciasLocalStorage = farmacias => store.set('farmacias', farmacias);
+export const saveFarmaciasLocalStorage = farmacias => store.set('farmacias', farmacias)
 
-export const getFarmaciasFromLocalStorage = () => JSON.parse(localStorage.getItem('farmacias'));
+export const getFarmaciasFromLocalStorage = () => JSON.parse(localStorage.getItem('farmacias'))

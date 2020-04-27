@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { blackWhite } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { blackWhite } from '../theme/theme'
+import device from './media-queries'
 
 const StyledLastUpdateTitle = styled.p`
   text-transform: uppercase;
@@ -12,6 +12,6 @@ const StyledLastUpdateTitle = styled.p`
   @media ${device.tablet} {
     font-size: 1rem;
   }
-`;
+`
 
-export default StyledLastUpdateTitle;
+export default StyledLastUpdateTitle

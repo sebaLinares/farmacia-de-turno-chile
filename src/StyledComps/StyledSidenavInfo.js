@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const StyledSidenavInfo = styled.div`
   display: ${props => (props.isOpen ? 'flex' : 'none')};
@@ -7,6 +7,6 @@ const StyledSidenavInfo = styled.div`
   justify-content: center;
   padding: 150px 50px 50px;
   height: 100%;
-`;
+`
 
-export default StyledSidenavInfo;
+export default StyledSidenavInfo

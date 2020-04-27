@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const StyledLogoDiv = styled.div`
   cursor: pointer;
@@ -10,6 +10,6 @@ const StyledLogoDiv = styled.div`
     width: 100%;
     height: auto;
   }
-`;
+`
 
-export default StyledLogoDiv;
+export default StyledLogoDiv

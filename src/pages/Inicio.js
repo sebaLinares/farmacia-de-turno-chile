@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import StyledMainCard from '../StyledComps/StyledMainCard';
-import StyledText from '../StyledComps/StyledText';
-import StyledTitle from '../StyledComps/StyledTitle';
-import StyledButton from '../StyledComps/StyledButton';
+import React from 'react'
+import PropTypes from 'prop-types'
+import StyledMainCard from '../StyledComps/StyledMainCard'
+import StyledText from '../StyledComps/StyledText'
+import StyledTitle from '../StyledComps/StyledTitle'
+import StyledButton from '../StyledComps/StyledButton'
 
 const Inicio = ({ history }) => {
   const goToRegiones = () => {
-    history.push({ pathname: '/regiones' });
-  };
+    history.push({ pathname: '/regiones' })
+  }
   return (
     <StyledMainCard>
       <StyledTitle>Bienvenido!</StyledTitle>
@@ -32,11 +32,11 @@ const Inicio = ({ history }) => {
         <span>Comenzar</span>
       </StyledButton>
     </StyledMainCard>
-  );
-};
+  )
+}
 
 Inicio.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
-};
+}
 
-export default Inicio;
+export default Inicio

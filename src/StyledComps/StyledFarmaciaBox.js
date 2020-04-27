@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { redCyan, cardBackgroundColor, blackWhite } from '../theme/theme';
-import PLUS from '../assets/plus.png';
+import styled from 'styled-components'
+import { redCyan, cardBackgroundColor, blackWhite } from '../theme/theme'
+import PLUS from '../assets/plus.png'
 
 const StyledFarmaciasCard = styled.div`
   position: relative;
@@ -60,6 +60,6 @@ const StyledFarmaciasCard = styled.div`
     padding: 0.25em 0.75em;
     color: ${blackWhite};
   }
-`;
+`
 
-export default StyledFarmaciasCard;
+export default StyledFarmaciasCard
