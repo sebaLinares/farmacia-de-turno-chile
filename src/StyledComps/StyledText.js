@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { blackWhite } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { blackWhite } from '../theme/theme'
+import device from './media-queries'
 
 const StyledText = styled.p`
   font-size: 0.625rem;
@@ -12,6 +12,6 @@ const StyledText = styled.p`
   @media ${device.tablet} {
     font-size: 1rem;
   }
-`;
+`
 
-export default StyledText;
+export default StyledText

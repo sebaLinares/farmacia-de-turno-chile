@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import StyledButtonBar from './StyledButtonBar';
-import { ShakeKeyFrame } from './KeyFrames';
-import device from './media-queries';
+import styled, { css } from 'styled-components'
+import StyledButtonBar from './StyledButtonBar'
+import { ShakeKeyFrame } from './KeyFrames'
+import device from './media-queries'
 
 const StyledMenuButton = styled.div(
   ({ isOpen }) => css`
@@ -65,6 +65,6 @@ const StyledMenuButton = styled.div(
     }
   }
 `,
-);
+)
 
-export default StyledMenuButton;
+export default StyledMenuButton

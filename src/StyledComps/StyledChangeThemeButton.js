@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { whiteBlack, blackWhite } from '../theme/theme';
+import styled from 'styled-components'
+import { whiteBlack, blackWhite } from '../theme/theme'
 
 const StyledChangeThemeButton = styled.div`
   width: 80px;
@@ -33,6 +33,6 @@ const StyledChangeThemeButton = styled.div`
       transition: 0.7s ease;
     }
   }
-`;
+`
 
-export default StyledChangeThemeButton;
+export default StyledChangeThemeButton

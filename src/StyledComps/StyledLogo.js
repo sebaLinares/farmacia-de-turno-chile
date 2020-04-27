@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { blackWhite } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { blackWhite } from '../theme/theme'
+import device from './media-queries'
 
 const StyledLogo = styled.div`
   width: 0;
@@ -14,6 +14,6 @@ const StyledLogo = styled.div`
     border-right: 1.25rem solid transparent;
     border-bottom: 1.75rem solid ${blackWhite};
   }
-`;
+`
 
-export default StyledLogo;
+export default StyledLogo

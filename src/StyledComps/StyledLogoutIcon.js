@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { logoutIcon } from '../theme/theme';
+import styled from 'styled-components'
+import { logoutIcon } from '../theme/theme'
 
 const StyledLogoutIcon = styled.div`
   margin-left: 24px;
@@ -9,6 +9,6 @@ const StyledLogoutIcon = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: ${logoutIcon};
-`;
+`
 
-export default StyledLogoutIcon;
+export default StyledLogoutIcon

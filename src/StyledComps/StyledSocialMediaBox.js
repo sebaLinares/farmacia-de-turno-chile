@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { githubImg } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { githubImg } from '../theme/theme'
+import device from './media-queries'
 
 const StyledSocialMediaBox = styled.div`
   background-image: ${githubImg};
@@ -12,6 +12,6 @@ const StyledSocialMediaBox = styled.div`
     height: 25px;
     width: 25px;
   }
-`;
+`
 
-export default StyledSocialMediaBox;
+export default StyledSocialMediaBox

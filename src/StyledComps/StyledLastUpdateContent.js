@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { blackWhite } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { blackWhite } from '../theme/theme'
+import device from './media-queries'
 
 const StyledLastUpdateContent = styled.p`
   color: ${blackWhite};
@@ -11,6 +11,6 @@ const StyledLastUpdateContent = styled.p`
   @media ${device.tablet} {
     font-size: 1rem;
   }
-`;
+`
 
-export default StyledLastUpdateContent;
+export default StyledLastUpdateContent

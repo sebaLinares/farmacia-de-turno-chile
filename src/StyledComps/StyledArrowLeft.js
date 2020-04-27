@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { arrowLeft } from '../theme/theme';
+import styled from 'styled-components'
+import { arrowLeft } from '../theme/theme'
 
 const StyledArrowLeft = styled.div`
   position: absolute;
@@ -13,6 +13,6 @@ const StyledArrowLeft = styled.div`
   background-size: cover
   background-repeat: no-repeat;
   background-position: 50%;
-`;
+`
 
-export default StyledArrowLeft;
+export default StyledArrowLeft

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { blackWhite, whiteBlack, redCyan } from '../theme/theme';
+import styled from 'styled-components'
+import { blackWhite, whiteBlack, redCyan } from '../theme/theme'
 
 const StyledOption = styled.div`
   height: 100%;
@@ -14,6 +14,6 @@ const StyledOption = styled.div`
     background-color: ${redCyan};
     color: ${whiteBlack};
   }
-`;
+`
 
-export default StyledOption;
+export default StyledOption

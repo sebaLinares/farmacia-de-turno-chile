@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { invertSidenavMenuBackground } from '../theme/theme';
+import styled from 'styled-components'
+import { invertSidenavMenuBackground } from '../theme/theme'
 
 const StyledSelect = styled.select`
   display: inline-block;
@@ -22,6 +22,6 @@ const StyledSelect = styled.select`
     outline-color: transparent;
     outline-style: none;
   }
-`;
+`
 
-export default StyledSelect;
+export default StyledSelect

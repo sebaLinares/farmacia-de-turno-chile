@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { redCyan } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { redCyan } from '../theme/theme'
+import device from './media-queries'
 
 const StyledFarmaciaCard = styled.div`
   position: absolute;
@@ -23,6 +23,6 @@ const StyledFarmaciaCard = styled.div`
   @media ${device.tablet} {
     width: 100%;
   }
-`;
+`
 
-export default StyledFarmaciaCard;
+export default StyledFarmaciaCard

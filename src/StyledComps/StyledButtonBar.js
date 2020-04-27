@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { blackWhite } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { blackWhite } from '../theme/theme'
+import device from './media-queries'
 
 const StyledButtonBar = styled.div`
   background-color: ${blackWhite};
@@ -12,6 +12,6 @@ const StyledButtonBar = styled.div`
     height: 5px;
     margin: 3px auto;
   }
-`;
+`
 
-export default StyledButtonBar;
+export default StyledButtonBar

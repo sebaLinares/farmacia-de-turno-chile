@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { cardBackgroundColor } from '../theme/theme';
-import device from './media-queries';
+import styled from 'styled-components'
+import { cardBackgroundColor } from '../theme/theme'
+import device from './media-queries'
 
 const StyledMainCard = styled.div`
   font-size: 0.75rem;
@@ -25,6 +25,6 @@ const StyledMainCard = styled.div`
     height: 400px;
     width: 600px;
   }
-`;
+`
 
-export default StyledMainCard;
+export default StyledMainCard

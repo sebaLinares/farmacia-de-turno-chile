@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import StyledLink from './StyledLink';
-import SocialMediaBox from './StyledSocialMediaBox';
-import { linkedinImg, twitterImg, githubImg } from '../theme/theme';
+import styled from 'styled-components'
+import StyledLink from './StyledLink'
+import SocialMediaBox from './StyledSocialMediaBox'
+import { linkedinImg, twitterImg, githubImg } from '../theme/theme'
 
 const StyledSocialMedia = styled.div`
   display: flex;
@@ -23,6 +23,6 @@ const StyledSocialMedia = styled.div`
       background-image: ${twitterImg};
     }
   }
-`;
+`
 
-export default StyledSocialMedia;
+export default StyledSocialMedia

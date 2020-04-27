@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { invertSidenavMenuBackground } from '../theme/theme';
+import styled from 'styled-components'
+import { invertSidenavMenuBackground } from '../theme/theme'
 
 // Images
 
@@ -11,6 +11,6 @@ const StyledProfilePicture = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   border: 4px solid ${invertSidenavMenuBackground};
-`;
+`
 
-export default StyledProfilePicture;
+export default StyledProfilePicture

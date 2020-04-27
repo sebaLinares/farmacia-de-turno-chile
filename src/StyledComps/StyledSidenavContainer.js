@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import { cardBackgroundColor, fontColor, invertSidenavMenuBackground } from '../theme/theme';
-import device from './media-queries';
+import styled, { css } from 'styled-components'
+import { cardBackgroundColor, fontColor, invertSidenavMenuBackground } from '../theme/theme'
+import device from './media-queries'
 
 const SidenavContainer = styled.div(
   ({ isOpen }) => css`
@@ -20,6 +20,6 @@ const SidenavContainer = styled.div(
       border-left: 4px solid ${invertSidenavMenuBackground};
     }
   `,
-);
+)
 
-export default SidenavContainer;
+export default SidenavContainer

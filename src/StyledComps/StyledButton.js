@@ -1,7 +1,11 @@
-import styled from 'styled-components';
-import { cardBackgroundColor, blackWhite } from '../theme/theme';
+import styled from 'styled-components'
+// import tw from 'tailwind.macro'
+import { cardBackgroundColor, blackWhite } from '../theme/theme'
+import '../css/style.css'
 
-const StyledButton = styled.button`
+const StyledButton = styled.button.attrs({
+  className: 'cursor-pointer',
+})`
   position: relative;
   width: 180px;
   height: 50px;
@@ -24,6 +28,6 @@ const StyledButton = styled.button`
     text-transform: uppercase;
     color: ${blackWhite};
   }
-`;
+`
 
-export default StyledButton;
+export default StyledButton

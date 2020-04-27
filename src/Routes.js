@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
-import Inicio from './pages/Inicio';
-import Regiones from './pages/Regiones';
-import Comunas from './pages/Comunas';
-import Farmacias from './pages/Farmacias';
-import Farmacia from './pages/Farmacia';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Switch, Route } from 'react-router-dom'
+import Inicio from './pages/Inicio'
+import Regiones from './pages/Regiones'
+import Comunas from './pages/Comunas'
+import Farmacias from './pages/Farmacias'
+import Farmacia from './pages/Farmacia'
 
 const Routes = ({
   filterComunasByRegion,
@@ -41,7 +41,7 @@ const Routes = ({
     />
   </Switch>
   // </Router>
-);
+)
 
 Routes.propTypes = {
   filterComunasByRegion: PropTypes.func.isRequired,
@@ -49,12 +49,12 @@ Routes.propTypes = {
   comunas: PropTypes.instanceOf(Array),
   farmaciasEnComunaElegida: PropTypes.instanceOf(Array),
   farmaciaElegida: PropTypes.instanceOf(Object),
-};
+}
 
 Routes.defaultProps = {
   comunas: [],
   farmaciasEnComunaElegida: [],
   farmaciaElegida: {},
-};
+}
 
-export default Routes;
+export default Routes
