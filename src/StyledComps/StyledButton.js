@@ -4,13 +4,12 @@ import { cardBackgroundColor, blackWhite } from '../theme/theme'
 import '../css/style.css'
 
 const StyledButton = styled.button.attrs({
-  className: 'cursor-pointer',
+  className: 'cursor-pointer transition-colors duration-500 ease-in',
 })`
   position: relative;
   width: 180px;
   height: 50px;
   border-radius: 4px;
-  transition: 0.5s ease;
   background-color: ${cardBackgroundColor};
   border: 4px solid black;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
@@ -18,6 +17,7 @@ const StyledButton = styled.button.attrs({
     outline: none;
   }
   &:hover {
+    transition: transform 0.125s ease-in;
     transform: translateY(-0.5rem);
   }
   span {

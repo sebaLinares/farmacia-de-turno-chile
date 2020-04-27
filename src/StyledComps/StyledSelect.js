@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { invertSidenavMenuBackground } from '../theme/theme'
 
-const StyledSelect = styled.select`
+const StyledSelect = styled.select.attrs({
+  className: 'cursor-pointer',
+})`
   display: inline-block;
   width: 100%;
   box-sizing: border-box;

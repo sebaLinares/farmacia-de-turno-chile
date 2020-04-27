@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import { cardBackgroundColor } from '../theme/theme'
 import device from './media-queries'
 
-const StyledMainCard = styled.div`
+const StyledMainCard = styled.div.attrs({
+  className: 'transition-colors duration-500 ease-in',
+})`
   font-size: 0.75rem;
   max-width: 90%;
   position: absolute;

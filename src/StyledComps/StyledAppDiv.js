@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { whiteBlack } from '../theme/theme'
 
-const StyledAppDiv = styled.div`
+const StyledAppDiv = styled.div.attrs({
+  className: 'transition-colors duration-500 ease-in',
+})`
   background: ${whiteBlack};
   position: relative;
   width: 100%;

@@ -25,10 +25,10 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
         <StyledChangeThemeButton className={mode} onClick={changeTheme} />
         <StyledGreetings>
           <StyledText>
-            Este sitio obtiene su información desde
+            Esta aplicación obtiene su información desde
             <StyledLink target="_blank" href="https://farmanet.minsal.cl/maps/">
               {' '}
-              un sitio web del MINSAL
+              un sitio MINSAL
               {' '}
               <span role="img" aria-label="finger pointing left">
                 👈🏼
@@ -39,7 +39,7 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
         <br />
         <StyledGreetings>
           <StyledText>
-            Si tu región o comuna no aparece en esta lista, no significa que no existan farmacias de
+            Si tu región o comuna no aparece en la lista, no significa que no existan farmacias de
             turno. Siempre tienes el número oficial de Salud Responde
             {' '}
             <StyledLink href="tel:600-360-7777"> 600 360 7777 </StyledLink>
@@ -47,10 +47,10 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
               📞
             </span>
             {' '}
-            para consultar por una comuna en especíco! No dudes en llamar.
+            para consultar por una comuna en específico! No dudes en llamar.
             {' '}
             <strong>
-              Este es el lugar oficial para consultar por la farmacia de turno en tu comuna
+              Este número es el canal oficial para consultar por la farmacia de turno en tu comuna
             </strong>
           </StyledText>
         </StyledGreetings>
@@ -94,12 +94,8 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
         </StyledSocialMediaContainer>
         <StyledLastUpdateWrapper>
           <StyledLastUpdateTitle>última actualización</StyledLastUpdateTitle>
-          <StyledLastUpdateContent>3 - 11 - 2019</StyledLastUpdateContent>
+          <StyledLastUpdateContent>26 - 04 - 2020</StyledLastUpdateContent>
         </StyledLastUpdateWrapper>
-        {/* <StyledLogoutWrapper>
-          <StyledLogoutContent>Logout</StyledLogoutContent>
-          <StyledLogoutIcon />
-        </StyledLogoutWrapper> */}
       </StyledSidenavInfo>
     </StyledSidenavContainer>
   )

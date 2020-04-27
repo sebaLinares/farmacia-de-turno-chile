@@ -1,15 +1,17 @@
 import styled from 'styled-components'
 import { whiteBlack, blackWhite } from '../theme/theme'
 
-const StyledChangeThemeButton = styled.div`
+const StyledChangeThemeButton = styled.div.attrs({
+  className: 'cursor-pointer',
+})`
   width: 80px;
   height: 40px;
   background: ${blackWhite};
   position: absolute;
   left: 2rem;
-  top: 6%;
+  top: 2.5rem;
   border-radius: 1.5rem;
-  transition: 0.7ease;
+  transition: 0.7s ease;
   &:before {
     content: '☀️';
     position: absolute;
