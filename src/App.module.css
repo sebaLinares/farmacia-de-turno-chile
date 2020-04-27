@@ -46,7 +46,6 @@ h3 {
   right: 0;
   background-color: var(--sidenav-menu);
   overflow-x: hidden;
-  transition: 0.5s;
   padding-top: 60px;
 }
 

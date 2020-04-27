@@ -3,8 +3,9 @@ import StyledButtonBar from './StyledButtonBar'
 import { ShakeKeyFrame } from './KeyFrames'
 import device from './media-queries'
 
-const StyledMenuButton = styled.div(
-  ({ isOpen }) => css`
+const StyledMenuButton = styled.div.attrs({
+  className: 'cursor-pointer',
+})`
   position: absolute;
   z-index: 99;
   top: 2.5rem;
@@ -18,15 +19,17 @@ const StyledMenuButton = styled.div(
     animation: ${ShakeKeyFrame} 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   }
   ${StyledButtonBar}:nth-child(1) {
+    transition: transform .25s ease
     width: 28px;
-    transform: ${isOpen
+    transform: ${props => props.isOpen
       && css`
         rotate(45deg) translate(8px, 12px);
     `};
   }
   ${StyledButtonBar}:nth-child(2) {
     width: 18px;
-    ${isOpen
+    transition: transform .25s ease
+    ${({ isOpen }) => isOpen
       && css`
         transform: rotate(-45deg) translate(-12px, 0px);
         width: 20px;
@@ -34,7 +37,8 @@ const StyledMenuButton = styled.div(
   }
   ${StyledButtonBar}:nth-child(3) {
     width: 12px;
-    transform: ${isOpen
+    transition: transform .25s ease
+    transform: ${({ isOpen }) => isOpen
       && css`
         rotate(-45deg) translate(6px, -5px);
       `};
@@ -43,14 +47,16 @@ const StyledMenuButton = styled.div(
   @media ${device.tablet} {
     ${StyledButtonBar}:nth-child(1) {
       width: 38px;
-      transform: ${isOpen
+      transition: transform .25s ease
+      transform: ${({ isOpen }) => isOpen
         && css`
           rotate(45deg) translate(8px, 12px);
       `};
     }
     ${StyledButtonBar}:nth-child(2) {
       width: 26px;
-      ${isOpen
+      transtion: transform .25s ease
+      ${({ isOpen }) => isOpen
         && css`
           transform: rotate(-45deg) translate(-12px, 0px);
           width: 20px;
@@ -58,13 +64,13 @@ const StyledMenuButton = styled.div(
     }
     ${StyledButtonBar}:nth-child(3) {
       width: 18px;
-      transform: ${isOpen
+      transition: transform .25s ease
+      transform: ${({ isOpen }) => isOpen
         && css`
           rotate(-45deg) translate(15px, -8px);
         `};
     }
   }
-`,
-)
+`
 
 export default StyledMenuButton

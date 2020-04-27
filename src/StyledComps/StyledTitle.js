@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { blackWhite } from '../theme/theme'
 
-const StyledTitle = styled.h2`
+const StyledTitle = styled.h2.attrs({
+  className: 'text-xl',
+})`
   color: ${blackWhite};
   font-family: 'Space Mono';
   font-weight: 600;
