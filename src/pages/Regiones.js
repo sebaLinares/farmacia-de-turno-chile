@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -16,21 +16,18 @@ import StyledOptionContainer from '../StyledComps/StyledOptionContainer'
 import StyledArrowLeft from '../StyledComps/StyledArrowLeft'
 
 const Regiones = ({ history, filterComunasByRegion }) => {
-  const [regiones, setRegiones] = useState([])
-  const [appear, setAppear] = useState(false)
+  const [regiones, setRegiones] = React.useState([])
+  const [regionesSelectIsOpen, setRegionesSelectIsOpen] = React.useState(false)
+  const optionContainerRef = React.useRef()
 
-  useEffect(() => {
+  React.useEffect(() => {
     const regionesWithId = getRegiones()
     setRegiones(regionesWithId)
   }, [])
 
-  const showOptions = () => {
-    setAppear(!appear)
-  }
-
   const regionChosen = (region) => {
     filterComunasByRegion(region.id)
-    setAppear(!appear)
+    setRegionesSelectIsOpen(false)
     history.push('/comunas', { region: region.name })
   }
 
@@ -43,10 +40,21 @@ const Regiones = ({ history, filterComunasByRegion }) => {
       <StyledTitle>Región</StyledTitle>
       <br />
       <StyledSelectContainer>
-        <StyledSelect onClick={showOptions} role="listbox" />
-        <StyledOptionContainer appear={appear}>
+        <StyledSelect
+          onBlur={() => setRegionesSelectIsOpen(false)}
+          onClick={() => {
+            // showOptions()
+            setRegionesSelectIsOpen(!regionesSelectIsOpen)
+          }}
+          role="listbox"
+        />
+        <StyledOptionContainer isOpen={regionesSelectIsOpen} ref={optionContainerRef}>
           {regiones.map(reg => (
-            <StyledOption key={reg.id} onClick={() => regionChosen(reg)}>
+            <StyledOption
+              onMouseDown={event => event.preventDefault()}
+              key={reg.id}
+              onClick={() => regionChosen(reg)}
+            >
               <li style={{ listStyleType: 'none' }} role="option" aria-selected="true">
                 {reg.name}
               </li>

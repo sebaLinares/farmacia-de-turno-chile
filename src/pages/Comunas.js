@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
@@ -15,10 +15,8 @@ import StyledArrowLeft from '../StyledComps/StyledArrowLeft'
 const Comunas = ({
   history, comunas, getFarmaciasFromComuna, farmacias,
 }) => {
-  const [appear, setAppear] = useState(false)
-  const showOptions = () => {
-    setAppear(!appear)
-  }
+  const [comunasSelectIsOpen, setComunasSelectIsOpen] = React.useState(false)
+  const [appear, setAppear] = React.useState(false)
 
   const comunaChosen = (idComuna) => {
     getFarmaciasFromComuna(idComuna)
@@ -35,10 +33,17 @@ const Comunas = ({
       <StyledTitle>Comuna</StyledTitle>
       <br />
       <StyledSelectContainer>
-        <StyledSelect onClick={showOptions} />
-        <StyledOptionContainer appear={appear}>
+        <StyledSelect
+          onClick={() => setComunasSelectIsOpen(!comunasSelectIsOpen)}
+          onBlur={() => setComunasSelectIsOpen(false)}
+        />
+        <StyledOptionContainer isOpen={comunasSelectIsOpen}>
           {comunas.map(comuna => (
-            <StyledOption key={comuna.idFarmacia} onClick={() => comunaChosen(comuna.id)}>
+            <StyledOption
+              key={comuna.idFarmacia}
+              onClick={() => comunaChosen(comuna.id)}
+              onMouseDown={event => event.preventDefault()}
+            >
               {comuna.name}
             </StyledOption>
           ))}

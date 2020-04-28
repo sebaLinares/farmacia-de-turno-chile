@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import { invertSidenavMenuBackground } from '../theme/theme'
+import '../css/style.css'
 
-const StyledOptionContainer = styled.div`
-  display: ${props => props.appear === false && 'none'};
-  position: absolute;
+const StyledOptionContainer = styled.div.attrs(({ isOpen }) => ({
+  className: `transition-max-height duration-500 ease-in-out absolute overflow-scroll w-full ${
+    isOpen ? 'max-h-300' : 'max-h-0'
+  }`,
+}))`
   top: 44px;
-  width: 100%;
   border: 4px solid ${invertSidenavMenuBackground};
   z-index: -1;
-  max-height: 200px;
-  overflow: scroll;
 `
 
 export default StyledOptionContainer

@@ -3,27 +3,27 @@ import store from 'store'
 
 export const getRegiones = () => [
   {
-    name: 'Region de Arica y Parinatoca',
+    name: 'Región de Arica y Parinacota',
     id: '1',
   },
   {
-    name: 'Region de Tarapacá',
+    name: 'Región de Tarapacá',
     id: '2',
   },
   {
-    name: 'Region de Antofagasta',
+    name: 'Región de Antofagasta',
     id: '3',
   },
   {
-    name: 'Region de Atacama',
+    name: 'Región de Atacama',
     id: '4',
   },
   {
-    name: 'Region de Coquimbo',
+    name: 'Región de Coquimbo',
     id: '5',
   },
   {
-    name: 'Region de Valparaiso',
+    name: 'Región de Valparaiso',
     id: '6',
   },
   {
@@ -31,7 +31,7 @@ export const getRegiones = () => [
     id: '7',
   },
   {
-    name: 'Región del Libertador Bernardo',
+    name: "Región del Libertador Bernardo O'Higgins",
     id: '8',
   },
   {
