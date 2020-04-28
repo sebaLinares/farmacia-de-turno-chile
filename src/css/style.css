@@ -6072,12 +6072,124 @@ video {
   margin-left: -1px;
 }
 
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-100 {
+  max-height: 100px;
+}
+
+.max-h-200 {
+  max-height: 200px;
+}
+
+.max-h-300 {
+  max-height: 300px;
+}
+
+.max-h-400 {
+  max-height: 400px;
+}
+
+.max-h-500 {
+  max-height: 500px;
+}
+
+.max-h-1\/4 {
+  max-height: 25%;
+}
+
+.max-h-1\/2 {
+  max-height: 50%;
+}
+
+.max-h-3\/4 {
+  max-height: 75%;
+}
+
 .max-h-full {
   max-height: 100%;
 }
 
-.max-h-screen {
-  max-height: 100vh;
+.focus\:max-h-0:focus {
+  max-height: 0;
+}
+
+.focus\:max-h-100:focus {
+  max-height: 100px;
+}
+
+.focus\:max-h-200:focus {
+  max-height: 200px;
+}
+
+.focus\:max-h-300:focus {
+  max-height: 300px;
+}
+
+.focus\:max-h-400:focus {
+  max-height: 400px;
+}
+
+.focus\:max-h-500:focus {
+  max-height: 500px;
+}
+
+.focus\:max-h-1\/4:focus {
+  max-height: 25%;
+}
+
+.focus\:max-h-1\/2:focus {
+  max-height: 50%;
+}
+
+.focus\:max-h-3\/4:focus {
+  max-height: 75%;
+}
+
+.focus\:max-h-full:focus {
+  max-height: 100%;
+}
+
+.hover\:max-h-0:hover {
+  max-height: 0;
+}
+
+.hover\:max-h-100:hover {
+  max-height: 100px;
+}
+
+.hover\:max-h-200:hover {
+  max-height: 200px;
+}
+
+.hover\:max-h-300:hover {
+  max-height: 300px;
+}
+
+.hover\:max-h-400:hover {
+  max-height: 400px;
+}
+
+.hover\:max-h-500:hover {
+  max-height: 500px;
+}
+
+.hover\:max-h-1\/4:hover {
+  max-height: 25%;
+}
+
+.hover\:max-h-1\/2:hover {
+  max-height: 50%;
+}
+
+.hover\:max-h-3\/4:hover {
+  max-height: 75%;
+}
+
+.hover\:max-h-full:hover {
+  max-height: 100%;
 }
 
 .max-w-none {
@@ -11815,6 +11927,18 @@ video {
   transition-property: transform;
 }
 
+.transition-max-height {
+  transition-property: max-height;
+}
+
+.transition-height {
+  transition-property: height;
+}
+
+.transition-width {
+  transition-property: width;
+}
+
 .ease-linear {
   transition-timing-function: linear;
 }
@@ -17360,14 +17484,6 @@ video {
 
   .sm\:-ml-px {
     margin-left: -1px;
-  }
-
-  .sm\:max-h-full {
-    max-height: 100%;
-  }
-
-  .sm\:max-h-screen {
-    max-height: 100vh;
   }
 
   .sm\:max-w-none {
@@ -23105,6 +23221,18 @@ video {
     transition-property: transform;
   }
 
+  .sm\:transition-max-height {
+    transition-property: max-height;
+  }
+
+  .sm\:transition-height {
+    transition-property: height;
+  }
+
+  .sm\:transition-width {
+    transition-property: width;
+  }
+
   .sm\:ease-linear {
     transition-timing-function: linear;
   }
@@ -28651,14 +28779,6 @@ video {
 
   .md\:-ml-px {
     margin-left: -1px;
-  }
-
-  .md\:max-h-full {
-    max-height: 100%;
-  }
-
-  .md\:max-h-screen {
-    max-height: 100vh;
   }
 
   .md\:max-w-none {
@@ -34396,6 +34516,18 @@ video {
     transition-property: transform;
   }
 
+  .md\:transition-max-height {
+    transition-property: max-height;
+  }
+
+  .md\:transition-height {
+    transition-property: height;
+  }
+
+  .md\:transition-width {
+    transition-property: width;
+  }
+
   .md\:ease-linear {
     transition-timing-function: linear;
   }
@@ -39942,14 +40074,6 @@ video {
 
   .lg\:-ml-px {
     margin-left: -1px;
-  }
-
-  .lg\:max-h-full {
-    max-height: 100%;
-  }
-
-  .lg\:max-h-screen {
-    max-height: 100vh;
   }
 
   .lg\:max-w-none {
@@ -45687,6 +45811,18 @@ video {
     transition-property: transform;
   }
 
+  .lg\:transition-max-height {
+    transition-property: max-height;
+  }
+
+  .lg\:transition-height {
+    transition-property: height;
+  }
+
+  .lg\:transition-width {
+    transition-property: width;
+  }
+
   .lg\:ease-linear {
     transition-timing-function: linear;
   }
@@ -51233,14 +51369,6 @@ video {
 
   .xl\:-ml-px {
     margin-left: -1px;
-  }
-
-  .xl\:max-h-full {
-    max-height: 100%;
-  }
-
-  .xl\:max-h-screen {
-    max-height: 100vh;
   }
 
   .xl\:max-w-none {
@@ -56976,6 +57104,18 @@ video {
 
   .xl\:transition-transform {
     transition-property: transform;
+  }
+
+  .xl\:transition-max-height {
+    transition-property: max-height;
+  }
+
+  .xl\:transition-height {
+    transition-property: height;
+  }
+
+  .xl\:transition-width {
+    transition-property: width;
   }
 
   .xl\:ease-linear {
