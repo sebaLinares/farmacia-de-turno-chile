@@ -94,7 +94,7 @@ const Sidenav = ({ isOpen, changeTheme, mode }) => {
         </StyledSocialMediaContainer>
         <StyledLastUpdateWrapper>
           <StyledLastUpdateTitle>última actualización</StyledLastUpdateTitle>
-          <StyledLastUpdateContent>26 - 04 - 2020</StyledLastUpdateContent>
+          <StyledLastUpdateContent>07-05-2020</StyledLastUpdateContent>
         </StyledLastUpdateWrapper>
       </StyledSidenavInfo>
     </StyledSidenavContainer>
