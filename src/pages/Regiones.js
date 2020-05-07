@@ -27,12 +27,7 @@ const Regiones = ({ history, filterComunasByRegion }) => {
   React.useEffect(() => {
     const regionesWithId = getRegiones()
     setRegiones(regionesWithId)
-    console.log('regiones, with id: ', regionesWithId)
   }, [])
-
-  React.useEffect(() => {
-    console.log('regiones en regiones...', regiones)
-  }, [regiones])
 
   React.useEffect(() => {
     if (!selectValue) {
