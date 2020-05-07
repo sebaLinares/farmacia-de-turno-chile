@@ -15,21 +15,35 @@ import StyledSelectContainer from '../StyledComps/StyledSelectContainer'
 import StyledOptionContainer from '../StyledComps/StyledOptionContainer'
 import StyledArrowLeft from '../StyledComps/StyledArrowLeft'
 
+// Components
+import Select from '../components/Select'
+
 const Regiones = ({ history, filterComunasByRegion }) => {
   const [regiones, setRegiones] = React.useState([])
   const [regionesSelectIsOpen, setRegionesSelectIsOpen] = React.useState(false)
+  const [selectValue, setSelectValue] = React.useState(null)
   const optionContainerRef = React.useRef()
 
   React.useEffect(() => {
     const regionesWithId = getRegiones()
     setRegiones(regionesWithId)
+    console.log('regiones, with id: ', regionesWithId)
   }, [])
 
-  const regionChosen = (region) => {
-    filterComunasByRegion(region.id)
+  React.useEffect(() => {
+    console.log('regiones en regiones...', regiones)
+  }, [regiones])
+
+  React.useEffect(() => {
+    if (!selectValue) {
+      return
+    }
+
+    const [selectedRegion] = regiones.filter(region => region.id === selectValue)
+    filterComunasByRegion(selectedRegion.id)
     setRegionesSelectIsOpen(false)
-    history.push('/comunas', { region: region.name })
-  }
+    history.push('/comunas', { region: selectedRegion.name })
+  }, [selectValue])
 
   return (
     <StyledMainCard>
@@ -39,6 +53,13 @@ const Regiones = ({ history, filterComunasByRegion }) => {
       <StyledText>Elige una</StyledText>
       <StyledTitle>Región</StyledTitle>
       <br />
+
+      <Select
+        setSelectValue={setSelectValue}
+        options={regiones}
+        defaultOptionLegend="Elige una región"
+      />
+
       <StyledSelectContainer>
         <StyledSelect
           onBlur={() => setRegionesSelectIsOpen(false)}
@@ -49,17 +70,18 @@ const Regiones = ({ history, filterComunasByRegion }) => {
           role="listbox"
         />
         <StyledOptionContainer isOpen={regionesSelectIsOpen} ref={optionContainerRef}>
-          {regiones.map(reg => (
-            <StyledOption
-              onMouseDown={event => event.preventDefault()}
-              key={reg.id}
-              onClick={() => regionChosen(reg)}
-            >
-              <li style={{ listStyleType: 'none' }} role="option" aria-selected="true">
-                {reg.name}
-              </li>
-            </StyledOption>
-          ))}
+          {regiones
+            && regiones.map(reg => (
+              <StyledOption
+                onMouseDown={event => event.preventDefault()}
+                key={reg.id}
+                onClick={() => setSelectValue(reg.id)}
+              >
+                <li style={{ listStyleType: 'none' }} role="option" aria-selected="true">
+                  {reg.name}
+                </li>
+              </StyledOption>
+            ))}
         </StyledOptionContainer>
       </StyledSelectContainer>
     </StyledMainCard>

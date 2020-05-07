@@ -12,17 +12,25 @@ import StyledSelectContainer from '../StyledComps/StyledSelectContainer'
 import StyledOptionContainer from '../StyledComps/StyledOptionContainer'
 import StyledArrowLeft from '../StyledComps/StyledArrowLeft'
 
+import Select from '../components/Select'
+
 const Comunas = ({
   history, comunas, getFarmaciasFromComuna, farmacias,
 }) => {
   const [comunasSelectIsOpen, setComunasSelectIsOpen] = React.useState(false)
   const [appear, setAppear] = React.useState(false)
+  const [selectValue, setSelectValue] = React.useState(null)
 
-  const comunaChosen = (idComuna) => {
-    getFarmaciasFromComuna(idComuna)
+  React.useEffect(() => {
+    if (!selectValue) {
+      return
+    }
+
+    const [comuna] = comunas.filter(comuna => comuna.id === selectValue)
+    getFarmaciasFromComuna(comuna.id)
     setAppear(!appear)
     history.push('/farmacias', { farmacias })
-  }
+  }, [selectValue])
 
   return (
     <StyledMainCard>
@@ -32,6 +40,13 @@ const Comunas = ({
       <StyledText>Elige una</StyledText>
       <StyledTitle>Comuna</StyledTitle>
       <br />
+
+      <Select
+        setSelectValue={setSelectValue}
+        options={comunas}
+        defaultOptionLegend="Elige una comuna"
+      />
+
       <StyledSelectContainer>
         <StyledSelect
           onClick={() => setComunasSelectIsOpen(!comunasSelectIsOpen)}
@@ -41,7 +56,7 @@ const Comunas = ({
           {comunas.map(comuna => (
             <StyledOption
               key={comuna.idFarmacia}
-              onClick={() => comunaChosen(comuna.id)}
+              onClick={() => setSelectValue(comuna.id)}
               onMouseDown={event => event.preventDefault()}
             >
               {comuna.name}
@@ -56,8 +71,6 @@ const Comunas = ({
 Comunas.propTypes = {
   history: PropTypes.instanceOf(Object).isRequired,
   getFarmaciasFromComuna: PropTypes.func.isRequired,
-  comunas: PropTypes.instanceOf(Array),
-  farmacias: PropTypes.instanceOf(Array),
 }
 
 Comunas.defaultProps = {
