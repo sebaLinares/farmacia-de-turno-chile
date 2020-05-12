@@ -93,9 +93,9 @@ export const blackWhite = theme('mode', {
 })
 
 export const redCyan = theme('mode', {
-  light: 'hsla(356, 92%, 54%, 1)',
+  light: '#e53e3e',
   // dark: 'hsla(186, 100%, 46%, 1)',
-  dark: 'hsla(186, 100%, 30%, 1)',
+  dark: '#38b2ac',
 })
 
 export const arrowLeft = theme('mode', {
