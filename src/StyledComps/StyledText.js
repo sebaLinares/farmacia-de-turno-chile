@@ -10,6 +10,9 @@ const StyledText = styled.p`
     font-size: 0.75rem;
   }
   @media ${device.tablet} {
+    font-size: 0.825rem;
+  }
+  @media ${device.laptopL} {
     font-size: 1rem;
   }
 `
