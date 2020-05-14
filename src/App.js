@@ -53,83 +53,83 @@ const App = ({ history }) => {
     }
   }
 
-  // UNCOMMENT IN DEVELOP
-  useEffect(() => {
-    const farmaciaAdapter = new FarmaciaAdapter()
-    const farmaciasLimpias = farmaciaAdapter.farmaciasToView(db)
-    if (localStorageExists('farmacias')) {
-      const farmaciasTimeDifference = getFarmaciasTimeDifference()
-      if (farmaciasTimeDifference < 5) {
-        console.log('to soon to upate')
-      } else {
-        console.log("let's upate farmacias")
-      }
-      setFarmaciasTime()
-      setFarmacias(getFarmaciasFromLocalStorage())
-    } else {
-      localStorage.setItem('farmaciasTime', JSON.stringify(new Date()))
-      saveFarmaciasLocalStorage(farmaciasLimpias)
-    }
-  }, [])
-
-  // // UNCOMMENT NI PRODUCTION START
-
-  // const createApiFarmacia = arrayOfUrls => new ApiFarmacia(arrayOfUrls)
-  // const createFarmaciaAdapter = () => new FarmaciaAdapter()
-  // const createFarmaciaGateway = (api, adapter) => new FarmaciaGateway(api, adapter)
-
+  // // UNCOMMENT IN DEVELOP
   // useEffect(() => {
-  //   const farmaciasTurnoUrl = process.env.REACT_APP_FARMACIAS_TURNO_URL
-  //   const farmaciasUrgenciaUrl = process.env.REACT_APP_FARMACIAS_URGENCIA_URL
-
-  //   let didCancel = false
-  //   const getFarmacias = async () => {
-  //     const apiFarmacia = createApiFarmacia([farmaciasTurnoUrl, farmaciasUrgenciaUrl])
-  //     const farmaciaAdapter = createFarmaciaAdapter()
-  //     const farmaciaGateway = createFarmaciaGateway(apiFarmacia, farmaciaAdapter)
-  //     if (localStorageExists('farmacias')) {
-  //       const farmaciasTimeDifference = getFarmaciasTimeDifference()
-  //       if (farmaciasTimeDifference > 300) {
-  //         try {
-  //           const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno()
-  //           const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia()
-  //           if (!didCancel) {
-  //             setFarmaciasTime()
-  //             saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia])
-  //             setFarmacias([...farmaciasTurno, ...farmaciasUrgencia])
-  //           }
-  //         } catch (err) {
-  //           if (!didCancel) {
-  //             console.error(err)
-  //           }
-  //         }
-  //       } else {
-  //         // set farmacias con lo que hay en local storage
-  //         setFarmacias(getFarmaciasFromLocalStorage())
-  //       }
+  //   const farmaciaAdapter = new FarmaciaAdapter()
+  //   const farmaciasLimpias = farmaciaAdapter.farmaciasToView(db)
+  //   if (localStorageExists('farmacias')) {
+  //     const farmaciasTimeDifference = getFarmaciasTimeDifference()
+  //     if (farmaciasTimeDifference < 5) {
+  //       console.log('to soon to upate')
   //     } else {
-  //       try {
-  //         const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno()
-  //         const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia()
-  //         if (!didCancel) {
-  //           setFarmaciasTime()
-  //           saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia])
-  //           setFarmacias([...farmaciasTurno, ...farmaciasUrgencia])
-  //         }
-  //       } catch (err) {
-  //         if (!didCancel) {
-  //           console.error(err)
-  //         }
-  //       }
+  //       console.log("let's upate farmacias")
   //     }
-  //   }
-  //   getFarmacias()
-  //   return () => {
-  //     didCancel = true
+  //     setFarmaciasTime()
+  //     setFarmacias(getFarmaciasFromLocalStorage())
+  //   } else {
+  //     localStorage.setItem('farmaciasTime', JSON.stringify(new Date()))
+  //     saveFarmaciasLocalStorage(farmaciasLimpias)
   //   }
   // }, [])
 
-  // // UNCOMMENT IN PRODUCTION END
+  // UNCOMMENT NI PRODUCTION START
+
+  const createApiFarmacia = arrayOfUrls => new ApiFarmacia(arrayOfUrls)
+  const createFarmaciaAdapter = () => new FarmaciaAdapter()
+  const createFarmaciaGateway = (api, adapter) => new FarmaciaGateway(api, adapter)
+
+  useEffect(() => {
+    const farmaciasTurnoUrl = process.env.REACT_APP_FARMACIAS_TURNO_URL
+    const farmaciasUrgenciaUrl = process.env.REACT_APP_FARMACIAS_URGENCIA_URL
+
+    let didCancel = false
+    const getFarmacias = async () => {
+      const apiFarmacia = createApiFarmacia([farmaciasTurnoUrl, farmaciasUrgenciaUrl])
+      const farmaciaAdapter = createFarmaciaAdapter()
+      const farmaciaGateway = createFarmaciaGateway(apiFarmacia, farmaciaAdapter)
+      if (localStorageExists('farmacias')) {
+        const farmaciasTimeDifference = getFarmaciasTimeDifference()
+        if (farmaciasTimeDifference > 300) {
+          try {
+            const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno()
+            const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia()
+            if (!didCancel) {
+              setFarmaciasTime()
+              saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia])
+              setFarmacias([...farmaciasTurno, ...farmaciasUrgencia])
+            }
+          } catch (err) {
+            if (!didCancel) {
+              console.error(err)
+            }
+          }
+        } else {
+          // set farmacias con lo que hay en local storage
+          setFarmacias(getFarmaciasFromLocalStorage())
+        }
+      } else {
+        try {
+          const farmaciasTurno = await farmaciaGateway.getFarmaciasTurno()
+          const farmaciasUrgencia = await farmaciaGateway.getFarmaciasUrgencia()
+          if (!didCancel) {
+            setFarmaciasTime()
+            saveFarmaciasLocalStorage([...farmaciasTurno, ...farmaciasUrgencia])
+            setFarmacias([...farmaciasTurno, ...farmaciasUrgencia])
+          }
+        } catch (err) {
+          if (!didCancel) {
+            console.error(err)
+          }
+        }
+      }
+    }
+    getFarmacias()
+    return () => {
+      didCancel = true
+    }
+  }, [])
+
+  // UNCOMMENT IN PRODUCTION END
 
   const filterComunasByRegion = (regionId) => {
     const comunasWithId = getComunasFromRegion(regionId, farmacias)
