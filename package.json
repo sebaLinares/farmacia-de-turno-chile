@@ -30,8 +30,8 @@
   "scripts": {
     "build:css": "postcss src/tailwind.css -o src/css/style.css",
     "watch:css": "postcss src/tailwind.css -o src/css/style.css",
-    "start": "yarn watch:css && yarn react-scripts start",
-    "build": "yarn build:css && yarn react-scripts build",
+    "start": "npm run watch:css && npm run react-scripts start",
+    "build": "npm run build:css && npm run react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint '**/*.js'",
@@ -48,7 +48,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run lint:fix",
+      "npm run lint:fix",
       "git add"
     ]
   },
