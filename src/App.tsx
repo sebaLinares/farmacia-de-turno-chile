@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 
 // Core
@@ -179,14 +178,6 @@ const App = ({ history }) => {
       </StyledAppDiv>
     </ThemeProvider>
   )
-}
-
-App.propTypes = {
-  history: PropTypes.instanceOf(Object),
-}
-
-App.defaultProps = {
-  history: {},
 }
 
 export default withRouter(App)
