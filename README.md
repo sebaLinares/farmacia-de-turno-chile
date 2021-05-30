@@ -22,11 +22,11 @@ Entra [en este link 👈](https://farmaciadeturnochile.netlify.com/) y encuentra
 
 4️⃣ Se te presentarán tantas farmacias como hayan de turno en la comuna elegida.
 
-5️⃣Elije una farmacia y entérate de la dirección.
+5️⃣ Elije una farmacia y entérate de la dirección.
 
 ![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/farmacia-card.jpg)
 
-6️⃣Puedes hacer click en `VER MAPA` y serás redirigid@ google maps en una búsqueda de la dirección de tu farmacia 📍.
+6️⃣ Puedes hacer click en `VER MAPA` y serás redirigid@ google maps en una búsqueda de la dirección de tu farmacia 📍.
 
 ![foto-sm](https://raw.githubusercontent.com/sebaLinares/screenshots/master/farmacia-de-turno-chile/farmacia.jpg)
 
@@ -34,7 +34,9 @@ Entra [en este link 👈](https://farmaciadeturnochile.netlify.com/) y encuentra
 
 Si quieres contribuir a este proyecto por favor haz un _fork_ de este repositorio. Puedes crear un _pull request_ o participar de cualquier _issue_. Cualquier _issue_ o _pull request_ será muy agradecida.
 
-Si no sabes como contribuir al open source te dejo [este link 👈](https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940) con un post de otra persona con los pasos para poder contribuir en proyecto _open source_ en Github.
+Lo único que debes hacer es correr la migración que está en la carpeta `db-dump`. Este dump de base de datos te creará la información estática que está aplicación necesita (regiones y comunas de chile).
+
+Si no sabes como contribuir al open source te dejo [este link 👈](https://codeburst.io/a-step-by-step-guide-to-making-your-first-github-contribution-5302260a2940) con un post de otra persona con los pasos para poder contribuir en proyectos _open source_ en Github.
 
 ## :car: Roadmap
 
