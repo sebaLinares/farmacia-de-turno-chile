@@ -13,8 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "semicolon": [true, "never", "ignore-interfaces"]
+    "jsx": "preserve"
   },
   "include": ["src"]
 }
